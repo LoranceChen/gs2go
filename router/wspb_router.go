@@ -77,7 +77,7 @@ func WsPbRouter(w http.ResponseWriter, r *http.Request, upgrader websocket.Upgra
 		newBuffer.WriteByte(actionByte)
 		newBuffer.Write(sequence)
 		newBuffer.Write(protoRspBytes)
-		_, err = protojson.Marshal(protoRsp)
+		marshal, err := protojson.Marshal(protoRsp)
 		if err != nil {
 			return err
 		}
