@@ -44,7 +44,7 @@ func (r *UserRouter) RouterName() module.RouterName {
 
 func hello(message *proto_define.HelloRequest) (*proto_define.HelloResponse, error) {
 	return &proto_define.HelloResponse{
-		Echo:     "echo response",
+		Echo:     "echo: " + message.Msg,
 		Sequence: message.Sequence,
 	}, nil
 }
