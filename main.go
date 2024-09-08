@@ -1,17 +1,22 @@
 package main
 
 import (
+	"encoding/json"
 	"flag"
+	"gs2go/proto_define"
 	"gs2go/router"
+	"log"
 	"net/http"
 	"text/template"
 
-	"log"
+	"google.golang.org/protobuf/proto"
+
+	protojson "google.golang.org/protobuf/encoding/protojson"
 
 	"github.com/gorilla/websocket"
 )
 
-var addr = flag.String("addr", "localhost:8080", "http service address")
+var addr = flag.String("addr", "localhost:8880", "http service address")
 
 var upgrader = websocket.Upgrader{}
 
@@ -44,6 +49,37 @@ func home(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	// proto test
+	request := proto_define.HelloRequest{
+		Msg:      "go proto",
+		Sequence: 0,
+	}
+	marshal, err := protojson.Marshal(&request)
+	if err != nil {
+		log.Printf("fail marshal pb: ", err)
+		return
+	}
+	log.Printf("hello request: %v", string(marshal))
+
+	response1 := proto_define.SignUpResponse{
+		Kingdom: &proto_define.Kingdom{
+			Id:    0,
+			Name:  "name01",
+			Items: nil,
+		}, Name: "123"}
+
+	_, _ = proto.Marshal(&response1)
+
+	marshal2, err := protojson.Marshal(&response1)
+	if err != nil {
+		log.Printf("fail marshal pb: ", err)
+		return
+	}
+
+	log.Printf("SignUpResponse: %v", string(marshal2))
+	marshal3, err := json.Marshal(response1)
+	log.Printf("SignUpResponse simple json : %v", string(marshal3))
+
 	log.Printf("starting server on %s", *addr)
 	flag.Parse()
 	log.SetFlags(0)

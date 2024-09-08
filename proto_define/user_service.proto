@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package gs2vs.game;
+
+option java_package = "gs2vs.services.game.protobuf";
+option csharp_namespace = "Gs2vs.Services.Game.Protobuf";
+option go_package = "example.com/project/proto_define";
+
+import "common_data.proto";
+
+message SignUpRequest {
+  string token = 1;
+}
+
+message SignUpResponse {
+  Kingdom kingdom = 1;
+  string name = 2;
+}
+
+message MultipleCallRequest {
+}
+
+message MultipleCallResponse {
+  int32 time_cost = 1;
+}
+
+message HelloRequest {
+  string msg = 1;
+  int32 sequence = 2;
+}
+
+message HelloResponse {
+  string echo = 1;
+  int32 sequence = 2;
+}

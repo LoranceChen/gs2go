@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package gs2vs.game;
+
+option java_package = "gs2vs.services.game.protobuf";
+option csharp_namespace = "Gs2vs.Services.Game.Protobuf";
+
+import "common_data.proto";
+
+service GrpcService {
+  rpc HelloStream (stream HelloStreamRequest) returns (stream HelloStreamResponse) {}
+}
+
+message HelloStreamRequest {
+  string msg = 1;
+  int32 sequence = 2;
+}
+
+message HelloStreamResponse {
+  string echo = 1;
+  int32 sequence = 2;
+}

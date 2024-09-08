@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package gs2vs.game;
+
+option java_package = "gs2vs.services.game.protobuf";
+option csharp_namespace = "Gs2vs.Services.Game.Protobuf";
+option go_package = "example.com/project/proto_define";
+
+import "common_data.proto";
+
+message SelectUserNameByIdRequest {
+  string id = 1;
+  string empty_field = 2;
+  string empty_field2 = 3;
+  InnerStruct inner_struct = 4;
+}
+
+message InnerStruct {
+  string name = 1;
+  int32 age = 2;
+}
+message SelectUserNameByIdResponse {
+  string name = 1;
+}

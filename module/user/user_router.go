@@ -1,11 +1,17 @@
 package user
 
 import (
-	"encoding/json"
 	"errors"
-	"gs2go/module"
-
 	"github.com/gorilla/websocket"
+	"google.golang.org/protobuf/proto"
+	"gs2go/module"
+	"gs2go/proto_define"
+)
+
+const (
+	SIGN_UP       byte = 1
+	MULTIPLE_CALL byte = 2
+	HELLO         byte = 3
 )
 
 type PbMessage struct {
@@ -14,40 +20,47 @@ type PbMessage struct {
 }
 type UserRouter struct {
 	conn           *websocket.Conn
-	actionHandlers map[module.ActionName]func(PbMessage) (PbMessage, error) // key: router name, value: output
+	actionHandlers map[module.ActionName]func(message []byte) (proto.Message, error) // key: router name, value: output
 	Name           module.RouterName
 }
 
-func (r *UserRouter) WsPbActionHandler(action module.ActionName) error {
+func (r *UserRouter) WsPbActionHandler(action module.ActionName, pb []byte) (proto.Message, error) {
 	handler, ok := r.actionHandlers[action]
 	if !ok {
-		errMsg := errors.New("not found route: ")
-		return errMsg
+		errMsg := errors.New("not found route: " + string(action.Name))
+		return nil, errMsg
 	}
-	resultMsg, err := handler(PbMessage{"field1", 2})
+	resultMsg, err := handler(pb)
 	if err != nil {
-		return errors.Join(errors.New("handle resultMsg"), err)
+		return nil, errors.Join(errors.New("handle resultMsg"), err)
 	}
-	marshal, err := json.Marshal(resultMsg)
-	if err != nil {
-		return errors.Join(errors.New("marshal resultMsg"), err)
-	}
-	r.conn.WriteMessage(websocket.TextMessage, marshal)
-	return nil
+
+	return resultMsg, nil
 }
 
 func (r *UserRouter) RouterName() module.RouterName {
 	return r.Name
 }
 
-func NewUserRouter(conn *websocket.Conn) *UserRouter {
-	m := make(map[module.ActionName]func(PbMessage) (PbMessage, error), 128)
-	m[module.ActionName{"SignUp"}] = SignUp
-	userRouter := &UserRouter{conn: conn, actionHandlers: m, Name: module.RouterName{"UserRouter"}}
-
-	return userRouter
+func hello(message *proto_define.HelloRequest) (*proto_define.HelloResponse, error) {
+	return &proto_define.HelloResponse{
+		Echo:     "echo response",
+		Sequence: message.Sequence,
+	}, nil
 }
 
-func SignUp(message PbMessage) (PbMessage, error) {
-	return message, nil
+func NewUserRouter(conn *websocket.Conn) *UserRouter {
+	m := make(map[module.ActionName]func(message []byte) (proto.Message, error), 128)
+
+	parsedHelloMsg := func(message []byte) (proto.Message, error) {
+		request := &proto_define.HelloRequest{}
+		proto.Unmarshal(message, request)
+		response, err := hello(request)
+		return response, err
+	}
+
+	m[module.ActionName{HELLO}] = parsedHelloMsg
+	userRouter := &UserRouter{conn: conn, actionHandlers: m, Name: module.RouterName{module.USER_SERVICE}}
+
+	return userRouter
 }

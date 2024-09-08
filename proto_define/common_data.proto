@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package gs2vs.game;
+
+option java_package = "gs2vs.services.game.protobuf";
+option csharp_namespace = "Gs2vs.Services.Game.Protobuf";
+option go_package = "example.com/project/proto_define";
+
+message Kingdom {
+  int64 id = 1;
+  string name = 2;
+  repeated string items = 3;
+}
+
+message FailMessage {
+  int64 error_code = 1;
+  string desc = 2;
+}

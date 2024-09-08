@@ -1,7 +1,7 @@
 package module
 
 type RouterName struct {
-	Name string
+	Name int16
 }
 
 type Routes struct {
