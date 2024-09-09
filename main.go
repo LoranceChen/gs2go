@@ -5,7 +5,6 @@ import (
 	"flag"
 	"gs2go/proto_define"
 	"gs2go/router"
-	"log"
 	"net/http"
 	"text/template"
 
@@ -14,6 +13,8 @@ import (
 	protojson "google.golang.org/protobuf/encoding/protojson"
 
 	"github.com/gorilla/websocket"
+	"github.com/grafana/pyroscope-go"
+	"github.com/rs/zerolog/log"
 )
 
 var addr = flag.String("addr", "localhost:8880", "http service address")
@@ -23,7 +24,7 @@ var upgrader = websocket.Upgrader{}
 func echo(w http.ResponseWriter, r *http.Request) {
 	c, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
-		log.Print("upgrade: ", err)
+		log.Info().Msgf("upgrade: ", err)
 		return
 	}
 
@@ -31,13 +32,13 @@ func echo(w http.ResponseWriter, r *http.Request) {
 	for {
 		mt, message, err := c.ReadMessage()
 		if err != nil {
-			log.Printf("readMessage: %v", err)
+			log.Info().Msgf("readMessage: %v", err)
 		}
 
-		log.Printf("recv: %s", message)
+		log.Info().Msgf("recv: %s", message)
 		err = c.WriteMessage(mt, message)
 		if err != nil {
-			log.Printf("writeMessage: %v", err)
+			log.Info().Msgf("writeMessage: %v", err)
 			break
 		}
 	}
@@ -49,6 +50,37 @@ func home(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+
+	_, err := pyroscope.Start(pyroscope.Config{
+		ApplicationName: "simple.app",
+
+		// replace this with the address of pyroscope server
+		ServerAddress: "http://profiling.cmk.woa.com",
+
+		// you can disable logging by setting this to nil
+		Logger: pyroscope.StandardLogger,
+
+		// Optional HTTP Basic authentication (Grafana Cloud)
+		// BasicAuthUser:     "<USER>",
+		BasicAuthPassword: "TODO",
+		// Optional Pyroscope tenant ID (only needed if using multi-tenancy). Not needed for Grafana Cloud.
+		// TenantID:          "<TenantID>",
+
+		// by default all profilers are enabled,
+		// but you can select the ones you want to use:
+		ProfileTypes: []pyroscope.ProfileType{
+			pyroscope.ProfileCPU,
+			pyroscope.ProfileAllocObjects,
+			pyroscope.ProfileAllocSpace,
+			pyroscope.ProfileInuseObjects,
+			pyroscope.ProfileInuseSpace,
+		},
+	})
+
+	if err != nil {
+		log.Error().Msgf("profiler start fail: ", err)
+	}
+
 	// proto test
 	request := proto_define.HelloRequest{
 		Msg:      "go proto",
@@ -56,10 +88,10 @@ func main() {
 	}
 	marshal, err := protojson.Marshal(&request)
 	if err != nil {
-		log.Printf("fail marshal pb: ", err)
+		log.Info().Msgf("fail marshal pb: ", err)
 		return
 	}
-	log.Printf("hello request: %v", string(marshal))
+	log.Info().Msgf("hello request: %v", string(marshal))
 
 	response1 := proto_define.SignUpResponse{
 		Kingdom: &proto_define.Kingdom{
@@ -76,18 +108,21 @@ func main() {
 		return
 	}
 
-	log.Printf("SignUpResponse: %v", string(marshal2))
+	log.Info().Msgf("SignUpResponse: %v", string(marshal2))
 	marshal3, err := json.Marshal(response1)
-	log.Printf("SignUpResponse simple json : %v", string(marshal3))
+	log.Info().Msgf("SignUpResponse simple json : %v", string(marshal3))
 
-	log.Printf("starting server on %s", *addr)
+	log.Info().Msgf("starting websocket & protobuf server on %s", *addr)
 	flag.Parse()
-	log.SetFlags(0)
 	http.HandleFunc("/", home)
 	http.HandleFunc("/echo", echo)
 
 	http.HandleFunc("/wspb", wspb)
-	log.Fatal(http.ListenAndServe(*addr, nil))
+	err = http.ListenAndServe(*addr, nil)
+	if err != nil {
+		panic(err)
+	}
+	// log.Fatal(http.ListenAndServe(*addr, nil))
 }
 
 func wspb(w http.ResponseWriter, r *http.Request) {
