@@ -13,6 +13,35 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
+type bufferwarp struct {
+	Buffer *bytes.Buffer
+	err    error
+}
+
+func (bw *bufferwarp) WriteByte(bt byte) {
+	if bw.err != nil {
+		return
+	}
+
+	err := bw.Buffer.WriteByte(bt)
+	if err != nil {
+		bw.err = errors.Join(errors.New("WsPbRouter"), err)
+		return
+	}
+}
+
+func (bw *bufferwarp) Write(bs []byte) {
+	if bw.err != nil {
+		return
+	}
+
+	_, err := bw.Buffer.Write(bs)
+	if err != nil {
+		bw.err = errors.Join(errors.New("WsPbRouter"), err)
+		return
+	}
+}
+
 func WsPbRouter(w http.ResponseWriter, r *http.Request, upgrader websocket.Upgrader) error {
 	c, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
@@ -77,26 +106,12 @@ func WsPbRouter(w http.ResponseWriter, r *http.Request, upgrader websocket.Upgra
 
 		newBuffer := bytes.NewBuffer(make([]byte, 1+2+1+4+len(protoRspBytes)))
 		newBuffer.Reset()
-		err = newBuffer.WriteByte(byte(1))
-		if err != nil {
-			return errors.Join(errors.New("WsPbRouter"), err)
-		}
-		_, err = newBuffer.Write(serviceBytes)
-		if err != nil {
-			return errors.Join(errors.New("WsPbRouter"), err)
-		}
-		err = newBuffer.WriteByte(actionByte)
-		if err != nil {
-			return errors.Join(errors.New("WsPbRouter"), err)
-		}
-		_, err = newBuffer.Write(sequence)
-		if err != nil {
-			return errors.Join(errors.New("WsPbRouter"), err)
-		}
-		_, err = newBuffer.Write(protoRspBytes)
-		if err != nil {
-			return errors.Join(errors.New("WsPbRouter"), err)
-		}
+		bw := bufferwarp{newBuffer, err}
+		bw.WriteByte(byte(1))
+		bw.Write(serviceBytes)
+		bw.WriteByte(actionByte)
+		bw.Write(sequence)
+		bw.Write(protoRspBytes)
 		//marshal, err := protojson.Marshal(protoRsp)
 		// _, err = protojson.Marshal(protoRsp)
 		// if err != nil {
