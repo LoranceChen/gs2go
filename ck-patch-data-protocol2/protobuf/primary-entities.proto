@@ -1,0 +1,87 @@
+syntax = "proto3";
+
+package ck;
+
+option java_package = "com.devsisters.ck.patchdata.protobuf";
+option csharp_namespace = "Patchdata.Protobuf";
+option java_multiple_files = true;
+option go_package = "example.com/project/patch_data2";
+
+// 게임 데이터에서 사용될 기본적인 타입에 대한 정의입니다.
+message Empty {
+}
+
+message Vector2 {
+    float x = 1;
+    float y = 2;
+}
+
+message Vector3 {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
+
+message Grid3 {
+    float x = 1;
+    float y = 2;
+    float z = 3;
+}
+
+message Grid3Double {
+    double x = 1;
+    double y = 2;
+    double z = 3;
+}
+
+message NullableInt {
+    oneof value {
+        Empty no_int = 1;
+        int32 int = 2;
+    }
+}
+
+message NullableFloat {
+    oneof value {
+        Empty no_float = 1;
+        float float = 2;
+    }
+}
+
+message IntList {
+    repeated int32 values = 1;
+}
+
+message NullableIntList {
+    repeated NullableInt values = 1;
+}
+
+message NullableFloatList {
+    repeated NullableFloat values = 1;
+}
+
+message Date {
+    int32 year = 1;
+    int32 month = 2;
+    int32 day = 3;
+}
+
+message TString {
+    string key = 1;
+    string original_text = 2;
+}
+
+message DateTime {
+    int64 millis_since_unix_epoch = 1;
+}
+
+message NullableDateTime {
+    oneof value {
+        Empty no_date_time = 1;
+        DateTime date_time = 2;
+    }
+}
+
+message Duration {
+    int64 millis = 1;
+}

@@ -1,4 +1,4 @@
-package module
+package service
 
 import "google.golang.org/protobuf/proto"
 
@@ -7,9 +7,7 @@ const (
 	PGSQL_SERVICE int16 = 2
 )
 
-type ActionName struct {
-	Name byte
-}
+type ActionName byte
 
 type Router interface {
 	WsPbActionHandler(action ActionName, pb []byte) (proto.Message, error)

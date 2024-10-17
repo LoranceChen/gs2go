@@ -1,0 +1,5 @@
+    1233 ./primary-entities.pb.go
+   25229 ./enums.pb.go
+   39575 ./envelopes.pb.go
+   92879 ./entities.pb.go
+  158916 total

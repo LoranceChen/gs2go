@@ -1,11 +1,19 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"flag"
+	"fmt"
+	"github.com/exaring/otelpgx"
+	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/pgxpool"
+	patch_data "gs2go/ck-patch-data-protocol/protobuf"
+	patch_data2 "gs2go/ck-patch-data-protocol2/protobuf"
 	"gs2go/proto_define"
 	"gs2go/router"
 	"net/http"
+	"os"
 	"text/template"
 
 	"google.golang.org/protobuf/proto"
@@ -50,6 +58,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	testPatchData()
 
 	_, err := pyroscope.Start(pyroscope.Config{
 		ApplicationName: "simple.app",
@@ -81,6 +90,15 @@ func main() {
 		log.Error().Msgf("profiler start fail: ", err)
 	}
 
+	//a1 := a.A1{DataA: 1}
+	//
+	//a1.GetB1()
+
+	ctx := context.Background()
+	// createDB
+	//pg := createDB()
+	_, err = pgxInit(ctx, "TODO")
+
 	// proto test
 	request := proto_define.HelloRequest{
 		Msg:      "go proto",
@@ -96,7 +114,7 @@ func main() {
 	response1 := proto_define.SignUpResponse{
 		Kingdom: &proto_define.Kingdom{
 			Id:    0,
-			Name:  "name01",
+			Name:  "",
 			Items: nil,
 		}, Name: "123"}
 
@@ -123,9 +141,50 @@ func main() {
 		panic(err)
 	}
 	// log.Fatal(http.ListenAndServe(*addr, nil))
+
+}
+
+func createDB() *pgx.Conn {
+	conn, err := pgx.Connect(context.Background(), os.Getenv("DATABASE_URL"))
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Unable to connect to database: %v\n", err)
+		os.Exit(1)
+	}
+	defer conn.Close(context.Background())
+
+	var greeting string
+	err = conn.QueryRow(context.Background(), "select 'Hello, world!'").Scan(&greeting)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "QueryRow failed: %v\n", err)
+		os.Exit(1)
+	}
+
+	fmt.Println(greeting)
+	return conn
+}
+
+func dbPool() {
+	dbpool, err := pgxpool.New(context.Background(), os.Getenv("DATABASE_URL"))
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Unable to create connection pool: %v\n", err)
+		os.Exit(1)
+	}
+	defer dbpool.Close()
+
+	var greeting string
+	err = dbpool.QueryRow(context.Background(), "select 'Hello, world!'").Scan(&greeting)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "QueryRow failed: %v\n", err)
+		os.Exit(1)
+	}
+
+	fmt.Println(greeting)
 }
 
 func wspb(w http.ResponseWriter, r *http.Request) {
+
+	a := patch_data.NullableInt{Value: &patch_data.NullableInt_Int{Int: 10}}
+
 	router.WsPbRouter(w, r, upgrader)
 }
 
@@ -208,3 +267,55 @@ You can change the message and send multiple times.
 </body>
 </html>
 `))
+
+func testPatchData() {
+	//_ = patch_data.Date{
+	//	Year:  0,
+	//	Month: 0,
+	//	Day:   0,
+	//}
+
+	rst := patch_data.ZonePaperShop{
+		PaperItemId:    0,
+		PaperId:        "",
+		PaperName:      "",
+		PaperThumb:     "",
+		PaperSize:      0,
+		Author:         "",
+		ThemeSeasonId:  0,
+		PriceItemId:    nil,
+		PriceQuantity:  nil,
+		PriceItemId2:   nil,
+		PriceQuantity2: nil,
+		Removed:        false,
+	}
+
+	description := patch_data2.ShopDescription{
+		Id: 1,
+		Description: &patch_data2.TString{
+			Key:          "",
+			OriginalText: "",
+		},
+	}
+
+	fmt.Println(rst)
+	fmt.Println(description)
+
+}
+
+func pgxInit(ctx context.Context, connString string) (*pgxpool.Pool, error) {
+	cfg, err := pgxpool.ParseConfig(connString)
+	if err != nil {
+		return nil, fmt.Errorf("create connection pool: %w", err)
+	}
+
+	cfg.ConnConfig.Tracer = otelpgx.NewTracer()
+
+	conn, err := pgxpool.NewWithConfig(ctx, cfg)
+	if err != nil {
+		return nil, fmt.Errorf("connect to database: %w", err)
+	}
+
+	println("asd")
+	return conn, nil
+}

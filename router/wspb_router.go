@@ -4,8 +4,7 @@ import (
 	"bytes"
 	"encoding/binary"
 	"errors"
-	"gs2go/module"
-	userModule "gs2go/module/user"
+	"gs2go/service"
 	"log"
 	"net/http"
 
@@ -89,8 +88,8 @@ func WsPbRouter(w http.ResponseWriter, r *http.Request, upgrader websocket.Upgra
 			return errors.Join(errors.New("WsPbRouter"), err)
 		}
 
-		router := routes.Value[module.RouterName{Name: serviceIndex}]
-		protoRsp, err := router.WsPbActionHandler(module.ActionName{Name: actionByte}, pb)
+		router := routes.Value[service.RouterName(serviceIndex)]
+		protoRsp, err := router.WsPbActionHandler(service.ActionName(actionByte), pb)
 		if err != nil {
 			log.Printf("wspbActionHandler: %v", err)
 			continue
@@ -125,9 +124,9 @@ func WsPbRouter(w http.ResponseWriter, r *http.Request, upgrader websocket.Upgra
 	return err
 }
 
-func setUpWsPb(conn *websocket.Conn) *module.Routes {
-	userRouter := userModule.NewUserRouter(conn)
-	routes := module.NewRoutes()
+func setUpWsPb(conn *websocket.Conn) *service.Services {
+	userRouter := service.NewUserRouter(conn)
+	routes := service.NewRoutes()
 	routes.RegisterRoute(userRouter)
 	return routes
 }

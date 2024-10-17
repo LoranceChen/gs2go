@@ -1,0 +1,2963 @@
+syntax = "proto3";
+
+package ck;
+
+option java_package = "com.devsisters.ck.patchdata.protobuf";
+option csharp_namespace = "Patchdata.Protobuf";
+option java_multiple_files = true;
+option go_package = "example.com/project/patch_data";
+
+// Envelope은 repeated 혹은 singular의 하나의 필드로 구성되어야 합니다.
+
+import "entities.proto";
+
+// ExcelFile: AbilityIconData
+message AbilityIcons {
+    repeated AbilityIcon data = 1;
+}
+
+// ExcelFile: ShopData
+message AccumulatedBonuss {
+    repeated AccumulatedBonus data = 1;
+}
+
+// ExcelFile: EventData
+message AchievementEvents {
+    repeated AchievementEvent data = 1;
+}
+
+// ExcelFile: TempleHonorData
+message AchievementHonorTrophys {
+    repeated AchievementHonorTrophy data = 1;
+}
+
+// ExcelFile: QuestData
+message AchievementQuests {
+    repeated AchievementQuest data = 1;
+}
+
+// ExcelFile: RewardData
+message AdditionalRewards {
+    repeated AdditionalReward data = 1;
+}
+
+// ExcelFile: AdjustSpecData
+message AdjustSpecGroups {
+    repeated AdjustSpecGroup data = 1;
+}
+
+// ExcelFile: AdjustSpecData
+message AdjustSpecInfos {
+    repeated AdjustSpecInfo data = 1;
+}
+
+// ExcelFile: AdjustSpecData
+message AdjustSpecTypess {
+    repeated AdjustSpecTypes data = 1;
+}
+
+// ExcelFile: AdjustSpecData
+message AdjustSpecValues {
+    repeated AdjustSpecValue data = 1;
+}
+
+// ExcelFile: CutSceneData
+message AdventureMapBalloons {
+    repeated AdventureMapBalloon data = 1;
+}
+
+// ExcelFile: AdventureMapData
+message AdventureMapObjects {
+    repeated AdventureMapObject data = 1;
+}
+
+// ExcelFile: AdventureMapData
+message AdventureStageRewards {
+    repeated AdventureStageReward data = 1;
+}
+
+// ExcelFile: AdvertisementData
+message Advertisements {
+    repeated Advertisement data = 1;
+}
+
+// ExcelFile: ExpeditionData
+message AirballoonExpeditions {
+    repeated AirballoonExpedition data = 1;
+}
+
+// ExcelFile: MusicBoxData
+message Albums {
+    repeated Album data = 1;
+}
+
+// ExcelFile: AncientTrialData
+message AncientCookieMissions {
+    repeated AncientCookieMission data = 1;
+}
+
+// ExcelFile: TcHardwareData
+message Androids {
+    repeated Android data = 1;
+}
+
+// ExcelFile: EventResourceKeySettingData
+message AprilFools2022CookieEventForms {
+    repeated AprilFools2022CookieEventForm data = 1;
+}
+
+// ExcelFile: BannerData
+message BannerLists {
+    repeated BannerList data = 1;
+}
+
+// ExcelFile: BattleData
+message BattleActions {
+    repeated BattleAction data = 1;
+}
+
+// ExcelFile: BattleData
+message BattleActionRules {
+    repeated BattleActionRule data = 1;
+}
+
+// ExcelFile: BattleCharacterAbilityStatData
+message BattleCharacterAbilityLevelStats {
+    repeated BattleCharacterAbilityLevelStat data = 1;
+}
+
+// ExcelFile: BattleCharacterAbilityStatData
+message BattleCharacterAbilityStats {
+    repeated BattleCharacterAbilityStat data = 1;
+}
+
+// ExcelFile: BattleCharacterAbilityStatData
+message BattleCharacterDungeonAbilitys {
+    repeated BattleCharacterDungeonAbility data = 1;
+}
+
+// ExcelFile: BattleData
+message BattleCharacterGroups {
+    repeated BattleCharacterGroup data = 1;
+}
+
+// ExcelFile: BattleData
+message BattleCharacterStats {
+    repeated BattleCharacterStat data = 1;
+}
+
+// ExcelFile: BattleCharacterAbilityStatData
+message BattleCharacterSummonAttackStats {
+    repeated BattleCharacterSummonAttackStat data = 1;
+}
+
+// ExcelFile: BattleData
+message BattleConfigs {
+    repeated BattleConfig data = 1;
+}
+
+// ExcelFile: SkillDescriptionData
+message BattleDescriptions {
+    repeated BattleDescription data = 1;
+}
+
+// ExcelFile: DailyDungeonData
+message BattleEffectPools {
+    repeated BattleEffectPool data = 1;
+}
+
+// ExcelFile: BattleData
+message BattleJamStones {
+    repeated BattleJamStone data = 1;
+}
+
+// ExcelFile: BattleData
+message BattleJamStoneCommands {
+    repeated BattleJamStoneCommand data = 1;
+}
+
+// ExcelFile: AdventureMapData
+message BattleLandEnvironments {
+    repeated BattleLandEnvironment data = 1;
+}
+
+// ExcelFile: BattleData
+message BattleMagicCandys {
+    repeated BattleMagicCandy data = 1;
+}
+
+// ExcelFile: BattleData
+message BattleMagicCandyCommands {
+    repeated BattleMagicCandyCommand data = 1;
+}
+
+// ExcelFile: BattleData
+message BattleRules {
+    repeated BattleRule data = 1;
+}
+
+// ExcelFile: BattleData
+message BattleSkillVideos {
+    repeated BattleSkillVideo data = 1;
+}
+
+// ExcelFile: TowerAdventureData
+message BattleTeamConditions {
+    repeated BattleTeamCondition data = 1;
+}
+
+// ExcelFile: ItemShopData
+message BeachShopSpeechs {
+    repeated BeachShopSpeech data = 1;
+}
+
+// ExcelFile: EventMinigameData
+message BingoEvents {
+    repeated BingoEvent data = 1;
+}
+
+// ExcelFile: BoardAdventureData
+message BoardAdventureEffects {
+    repeated BoardAdventureEffect data = 1;
+}
+
+// ExcelFile: BoardAdventureData
+message BoardAdventureEffectGroups {
+    repeated BoardAdventureEffectGroup data = 1;
+}
+
+// ExcelFile: BoardAdventureData
+message BoardAdventureItems {
+    repeated BoardAdventureItem data = 1;
+}
+
+// ExcelFile: BoardAdventureData
+message BoardAdventureMaps {
+    repeated BoardAdventureMap data = 1;
+}
+
+// ExcelFile: BoardAdventureData
+message BoardAdventureMapObjects {
+    repeated BoardAdventureMapObject data = 1;
+}
+
+// ExcelFile: BoardAdventureData
+message BoardAdventurePlayerLevelUps {
+    repeated BoardAdventurePlayerLevelUp data = 1;
+}
+
+// ExcelFile: BoardAdventureData
+message BoardAdventureRankingRewards {
+    repeated BoardAdventureRankingReward data = 1;
+}
+
+// ExcelFile: SeasonData
+message BoardAdventureSeasons {
+    repeated BoardAdventureSeason data = 1;
+}
+
+// ExcelFile: BoardAdventureData
+message BoardAdventureSouvenirs {
+    repeated BoardAdventureSouvenir data = 1;
+}
+
+// ExcelFile: PvpData
+message BotToppingSettings {
+    repeated BotToppingSetting data = 1;
+}
+
+// ExcelFile: BridgeData
+message Bridges {
+    repeated Bridge data = 1;
+}
+
+// ExcelFile: EventGachaData
+message BulletinboardEvents {
+    repeated BulletinboardEvent data = 1;
+}
+
+// ExcelFile: EventGachaData
+message BulletinboardStepInfos {
+    repeated BulletinboardStepInfo data = 1;
+}
+
+// ExcelFile: TcGachaShopData
+message BuyAndGiveFrees {
+    repeated BuyAndGiveFree data = 1;
+}
+
+// ExcelFile: CakeDungeonData
+message CakeDungeons {
+    repeated CakeDungeon data = 1;
+}
+
+// ExcelFile: CakeDungeonData
+message CakeDungeonConfigs {
+    repeated CakeDungeonConfig data = 1;
+}
+
+// ExcelFile: CakeDungeonData
+message CakeDungeonEffects {
+    repeated CakeDungeonEffect data = 1;
+}
+
+// ExcelFile: CakeDungeonData
+message CakeDungeonRandomEffectGroups {
+    repeated CakeDungeonRandomEffectGroup data = 1;
+}
+
+// ExcelFile: CakeDungeonData
+message CakeDungeonRandomEffectSlots {
+    repeated CakeDungeonRandomEffectSlot data = 1;
+}
+
+// ExcelFile: CakeDungeonData
+message CakeDungeonRankings {
+    repeated CakeDungeonRanking data = 1;
+}
+
+// ExcelFile: CakeDungeonData
+message CakeDungeonRerollPrices {
+    repeated CakeDungeonRerollPrice data = 1;
+}
+
+// ExcelFile: SeasonData
+message CakeDungeonSeasons {
+    repeated CakeDungeonSeason data = 1;
+}
+
+// ExcelFile: CakeDungeonData
+message CakeDungeonUpgradeEffectGroups {
+    repeated CakeDungeonUpgradeEffectGroup data = 1;
+}
+
+// ExcelFile: TowerAdventureData
+message CakeTowerAreas {
+    repeated CakeTowerArea data = 1;
+}
+
+// ExcelFile: CakeTycoonData
+message CakeTycoonCustomers {
+    repeated CakeTycoonCustomer data = 1;
+}
+
+// ExcelFile: CakeTycoonData
+message CakeTycoonCustomerOrders {
+    repeated CakeTycoonCustomerOrder data = 1;
+}
+
+// ExcelFile: CakeTycoonData
+message CakeTycoonDialogs {
+    repeated CakeTycoonDialog data = 1;
+}
+
+// ExcelFile: CakeTycoonData
+message CakeTycoonDialogGroups {
+    repeated CakeTycoonDialogGroup data = 1;
+}
+
+// ExcelFile: CakeTycoonData
+message CakeTycoonIngredients {
+    repeated CakeTycoonIngredient data = 1;
+}
+
+// ExcelFile: CakeTycoonData
+message CakeTycoonRecipes {
+    repeated CakeTycoonRecipe data = 1;
+}
+
+// ExcelFile: CakeTycoonData
+message CakeTycoonShopLevels {
+    repeated CakeTycoonShopLevel data = 1;
+}
+
+// ExcelFile: CastleData
+message CastleQuests {
+    repeated CastleQuest data = 1;
+}
+
+// ExcelFile: TcChannelFunctionData
+message ChannelFunctions {
+    repeated ChannelFunction data = 1;
+}
+
+// ExcelFile: CookieData
+message CharacterLists {
+    repeated CharacterList data = 1;
+}
+
+// ExcelFile: CookieDialogData
+message CharacterVoices {
+    repeated CharacterVoice data = 1;
+}
+
+// ExcelFile: ItemData
+message ChargeableItemAttributess {
+    repeated ChargeableItemAttributes data = 1;
+}
+
+// ExcelFile: BattleData
+message CheatingFlags {
+    repeated CheatingFlag data = 1;
+}
+
+// ExcelFile: EventGachaData
+message ChoiceboardEvents {
+    repeated ChoiceboardEvent data = 1;
+}
+
+// ExcelFile: EventGachaData
+message ChoiceRewardEvents {
+    repeated ChoiceRewardEvent data = 1;
+}
+
+// ExcelFile: ErrorData
+message ClientExceptions {
+    repeated ClientException data = 1;
+}
+
+// ExcelFile: CreditsData
+message CloseCreditss {
+    repeated CloseCredits data = 1;
+}
+
+// ExcelFile: TcShopData
+message CnPointShops {
+    repeated CnPointShop data = 1;
+}
+
+// ExcelFile: CookieCollaboData
+message CollaboDatas {
+    repeated CollaboData data = 1;
+}
+
+// ExcelFile: CollectionBookData
+message CollectionBooks {
+    repeated CollectionBook data = 1;
+}
+
+// ExcelFile: EventGachaData
+message CollectionGachaEvents {
+    repeated CollectionGachaEvent data = 1;
+}
+
+// ExcelFile: EventGachaData
+message CollectionGachaInfos {
+    repeated CollectionGachaInfo data = 1;
+}
+
+// ExcelFile: EventData
+message CollectionItemEvents {
+    repeated CollectionItemEvent data = 1;
+}
+
+// ExcelFile: NoticeData
+message CommunityButtons {
+    repeated CommunityButton data = 1;
+}
+
+// ExcelFile: EventData
+message Competitions {
+    repeated Competition data = 1;
+}
+
+// ExcelFile: StructureData
+message ConditionalStructurePassives {
+    repeated ConditionalStructurePassive data = 1;
+}
+
+// ExcelFile: TcGuideMissionData
+message ContentsPreviews {
+    repeated ContentsPreview data = 1;
+}
+
+// ExcelFile: ContentsUnlockData
+message ContentsUnlocks {
+    repeated ContentsUnlock data = 1;
+}
+
+// ExcelFile: EventResourceKeySettingData
+message CookieFortune2022s {
+    repeated CookieFortune2022 data = 1;
+}
+
+// ExcelFile: CookieGachaData
+message CookieGachas {
+    repeated CookieGacha data = 1;
+}
+
+// ExcelFile: CookieData
+message CookieGradeUps {
+    repeated CookieGradeUp data = 1;
+}
+
+// ExcelFile: CookieData
+message CookieLevelUps {
+    repeated CookieLevelUp data = 1;
+}
+
+// ExcelFile: EventData
+message CookieMenuEvents {
+    repeated CookieMenuEvent data = 1;
+}
+
+// ExcelFile: BattlePresetData
+message CookiePresets {
+    repeated CookiePreset data = 1;
+}
+
+// ExcelFile: CookieRelationshipData
+message CookieRelationshipLists {
+    repeated CookieRelationshipList data = 1;
+}
+
+// ExcelFile: CookieData
+message CookieSkillLevelUps {
+    repeated CookieSkillLevelUp data = 1;
+}
+
+// ExcelFile: CookieSkinData
+message CookieSkins {
+    repeated CookieSkin data = 1;
+}
+
+// ExcelFile: CookieSkinData
+message CookieSkinGachas {
+    repeated CookieSkinGacha data = 1;
+}
+
+// ExcelFile: CookieRelationshipData
+message CookieSkinRelationshipLists {
+    repeated CookieSkinRelationshipList data = 1;
+}
+
+// ExcelFile: CookieSkinData
+message CookieSkinSounds {
+    repeated CookieSkinSound data = 1;
+}
+
+// ExcelFile: CookieDialogData
+message CookieSquadChatDialogs {
+    repeated CookieSquadChatDialog data = 1;
+}
+
+// ExcelFile: CookieDialogData
+message CookieSquadChatInfos {
+    repeated CookieSquadChatInfo data = 1;
+}
+
+// ExcelFile: CookieSquadData
+message CookieSquadEventInfos {
+    repeated CookieSquadEventInfo data = 1;
+}
+
+// ExcelFile: CookieSquadData
+message CookieSquadInfos {
+    repeated CookieSquadInfo data = 1;
+}
+
+// ExcelFile: EventData
+message CookieSquadLevelEvents {
+    repeated CookieSquadLevelEvent data = 1;
+}
+
+// ExcelFile: SeasonData
+message CookieSquadSeasons {
+    repeated CookieSquadSeason data = 1;
+}
+
+// ExcelFile: CookieSquadData
+message CookieSquadStatuePartss {
+    repeated CookieSquadStatueParts data = 1;
+}
+
+// ExcelFile: BattlePresetData
+message CookieTeamPresets {
+    repeated CookieTeamPreset data = 1;
+}
+
+// ExcelFile: CountryCodeData
+message CountryCodes {
+    repeated CountryCode data = 1;
+}
+
+// ExcelFile: TradingData
+message CourierCarriages {
+    repeated CourierCarriage data = 1;
+}
+
+// ExcelFile: TradingData
+message CourierQuests {
+    repeated CourierQuest data = 1;
+}
+
+// ExcelFile: TradingData
+message CourierSlots {
+    repeated CourierSlot data = 1;
+}
+
+// ExcelFile: ShopData
+message CurrencyItemShops {
+    repeated CurrencyItemShop data = 1;
+}
+
+// ExcelFile: ShopData
+message CurrencyShops {
+    repeated CurrencyShop data = 1;
+}
+
+// ExcelFile: EventData
+message CustomEvents {
+    repeated CustomEvent data = 1;
+}
+
+// ExcelFile: EventData
+message CustomGroupEvents {
+    repeated CustomGroupEvent data = 1;
+}
+
+// ExcelFile: TcGachaShopData
+message CustomizeGachas {
+    repeated CustomizeGacha data = 1;
+}
+
+// ExcelFile: CutSceneData
+message CutSceneGroups {
+    repeated CutSceneGroup data = 1;
+}
+
+// ExcelFile: CutSceneData
+message CutSceneSubtitless {
+    repeated CutSceneSubtitles data = 1;
+}
+
+// ExcelFile: CutSceneData
+message CutSceneTriggers {
+    repeated CutSceneTrigger data = 1;
+}
+
+// ExcelFile: TcLimitData
+message DailyActionLimits {
+    repeated DailyActionLimit data = 1;
+}
+
+// ExcelFile: DailyDungeonData
+message DailyDungeons {
+    repeated DailyDungeon data = 1;
+}
+
+// ExcelFile: DailyDungeonData
+message DailyDungeonLandInfos {
+    repeated DailyDungeonLandInfo data = 1;
+}
+
+// ExcelFile: DailyDungeonData
+message DailyDungeonSchedules {
+    repeated DailyDungeonSchedule data = 1;
+}
+
+// ExcelFile: DailyDungeonData
+message DailyDungeonWeekDayRewards {
+    repeated DailyDungeonWeekDayReward data = 1;
+}
+
+// ExcelFile: DailyDungeonData
+message DailyDungeonWeekDayRewardGroups {
+    repeated DailyDungeonWeekDayRewardGroup data = 1;
+}
+
+// ExcelFile: ItemShopData
+message DailyPurchases {
+    repeated DailyPurchase data = 1;
+}
+
+// ExcelFile: EventData
+message DailyStoryEvents {
+    repeated DailyStoryEvent data = 1;
+}
+
+// ExcelFile: ItemShopData
+message DaramShopResources {
+    repeated DaramShopResource data = 1;
+}
+
+// ExcelFile: CookieDialogData
+message Dialogs {
+    repeated Dialog data = 1;
+}
+
+// ExcelFile: DodgeMinigameData
+message DodgeMinigameObjects {
+    repeated DodgeMinigameObject data = 1;
+}
+
+// ExcelFile: DodgeMinigameData
+message DodgeMinigamePatterns {
+    repeated DodgeMinigamePattern data = 1;
+}
+
+// ExcelFile: DodgeMinigameData
+message DodgeMinigameStages {
+    repeated DodgeMinigameStage data = 1;
+}
+
+// ExcelFile: DodgeMinigameData
+message DodgeMinigameStageGroups {
+    repeated DodgeMinigameStageGroup data = 1;
+}
+
+// ExcelFile: DailyDungeonData
+message DungeonBattleEffects {
+    repeated DungeonBattleEffect data = 1;
+}
+
+// ExcelFile: SquareData
+message Emotions {
+    repeated Emotion data = 1;
+}
+
+// ExcelFile: VisualNovelData
+message EndingMessages {
+    repeated EndingMessage data = 1;
+}
+
+// ExcelFile: EnumData
+message EnumLists {
+    repeated EnumList data = 1;
+}
+
+// ExcelFile: AdventureMapData
+message Episodes {
+    repeated Episode data = 1;
+}
+
+// ExcelFile: ErrorData
+message ErrorCodes {
+    repeated ErrorCode data = 1;
+}
+
+// ExcelFile: EventData
+message EventDialogs {
+    repeated EventDialog data = 1;
+}
+
+// ExcelFile: EventDungeonData
+message EventDungeonKeyItemInfos {
+    repeated EventDungeonKeyItemInfo data = 1;
+}
+
+// ExcelFile: EventDungeonData
+message EventDungeonScores {
+    repeated EventDungeonScore data = 1;
+}
+
+// ExcelFile: SeasonData
+message EventDungeonSeasons {
+    repeated EventDungeonSeason data = 1;
+}
+
+// ExcelFile: EventDungeonData
+message EventDungeonStages {
+    repeated EventDungeonStage data = 1;
+}
+
+// ExcelFile: EventData
+message EventInfos {
+    repeated EventInfo data = 1;
+}
+
+// ExcelFile: ItemShopData
+message EventMileageShops {
+    repeated EventMileageShop data = 1;
+}
+
+// ExcelFile: EventData
+message EventPasss {
+    repeated EventPass data = 1;
+}
+
+// ExcelFile: EventData
+message EventSchedules {
+    repeated EventSchedule data = 1;
+}
+
+// ExcelFile: EventData
+message EventSettings {
+    repeated EventSetting data = 1;
+}
+
+// ExcelFile: EventData
+message EventTaskInfos {
+    repeated EventTaskInfo data = 1;
+}
+
+// ExcelFile: SeasonData
+message EventThemeInfos {
+    repeated EventThemeInfo data = 1;
+}
+
+// ExcelFile: ExpeditionData
+message ExpeditionSuccessRates {
+    repeated ExpeditionSuccessRate data = 1;
+}
+
+// ExcelFile: ItemData
+message ExpPotionItemValues {
+    repeated ExpPotionItemValue data = 1;
+}
+
+// ExcelFile: ShopData
+message ExternalEventRewards {
+    repeated ExternalEventReward data = 1;
+}
+
+// ExcelFile: VisualNovelFavorGiftData
+message FavorGiftDialogs {
+    repeated FavorGiftDialog data = 1;
+}
+
+// ExcelFile: VisualNovelFavorGiftData
+message FavorGiftInfos {
+    repeated FavorGiftInfo data = 1;
+}
+
+// ExcelFile: VisualNovelFavorGiftData
+message FavorGiftLists {
+    repeated FavorGiftList data = 1;
+}
+
+// ExcelFile: GameData
+message FinishNows {
+    repeated FinishNow data = 1;
+}
+
+// ExcelFile: ShopData
+message FlatFees {
+    repeated FlatFee data = 1;
+}
+
+// ExcelFile: NpcManagerData
+message FloatingObjectGroups {
+    repeated FloatingObjectGroup data = 1;
+}
+
+// ExcelFile: BattleData
+message Floors {
+    repeated Floor data = 1;
+}
+
+// ExcelFile: TC_FloraGameData
+message FloraGameLevelDatas {
+    repeated FloraGameLevelData data = 1;
+}
+
+// ExcelFile: TcFollowData
+message FollowScenes {
+    repeated FollowScene data = 1;
+}
+
+// ExcelFile: ItemData
+message ForcedLevelUpItemValues {
+    repeated ForcedLevelUpItemValue data = 1;
+}
+
+// ExcelFile: ForeignEventPrizeData
+message ForeignEventPrizes {
+    repeated ForeignEventPrize data = 1;
+}
+
+// ExcelFile: FountainData
+message FountainProductionDurations {
+    repeated FountainProductionDuration data = 1;
+}
+
+// ExcelFile: FountainData
+message FountainRewards {
+    repeated FountainReward data = 1;
+}
+
+// ExcelFile: ItemData
+message FrameItemValues {
+    repeated FrameItemValue data = 1;
+}
+
+// ExcelFile: TcShopData
+message FundMissionPackages {
+    repeated FundMissionPackage data = 1;
+}
+
+// ExcelFile: BannerData
+message GachaBanners {
+    repeated GachaBanner data = 1;
+}
+
+// ExcelFile: GachaShopData
+message GachaGroupMoviePrefabs {
+    repeated GachaGroupMoviePrefab data = 1;
+}
+
+// ExcelFile: ItemData
+message GachaItemTargetCookies {
+    repeated GachaItemTargetCookie data = 1;
+}
+
+// ExcelFile: GachaShopData
+message GachaMileageRewardSteps {
+    repeated GachaMileageRewardStep data = 1;
+}
+
+// ExcelFile: GachaShopData
+message GachaPickUpRates {
+    repeated GachaPickUpRate data = 1;
+}
+
+// ExcelFile: GachaShopData
+message GachaPriceItemsPrioritys {
+    repeated GachaPriceItemsPriority data = 1;
+}
+
+// ExcelFile: GachaShopData
+message GachaRateUpSteps {
+    repeated GachaRateUpStep data = 1;
+}
+
+// ExcelFile: GachaShopData
+message GachaSelectedPickups {
+    repeated GachaSelectedPickup data = 1;
+}
+
+// ExcelFile: GachaShopData
+message GachaShops {
+    repeated GachaShop data = 1;
+}
+
+// ExcelFile: GachaShopData
+message GachaShopGroups {
+    repeated GachaShopGroup data = 1;
+}
+
+// ExcelFile: GameData
+message GameSettings {
+    repeated GameSetting data = 1;
+}
+
+// ExcelFile: GameData
+message GameSettingForClients {
+    repeated GameSettingForClient data = 1;
+}
+
+// ExcelFile: GnomeLabData
+message GnomeResearchs {
+    repeated GnomeResearch data = 1;
+}
+
+// ExcelFile: CookieDialogData
+message GroupChatDialogs {
+    repeated GroupChatDialog data = 1;
+}
+
+// ExcelFile: CookieDialogData
+message GroupChatInfos {
+    repeated GroupChatInfo data = 1;
+}
+
+// ExcelFile: ContentsGuideData
+message GroupGuides {
+    repeated GroupGuide data = 1;
+}
+
+// ExcelFile: TcGuideMissionData
+message GuideMissions {
+    repeated GuideMission data = 1;
+}
+
+// ExcelFile: EventData
+message GuideMissionEvents {
+    repeated GuideMissionEvent data = 1;
+}
+
+// ExcelFile: TcGuideMissionData
+message GuideMissionInfos {
+    repeated GuideMissionInfo data = 1;
+}
+
+// ExcelFile: TcGuideMissionData
+message GuideRewards {
+    repeated GuideReward data = 1;
+}
+
+// ExcelFile: TcGuideMissionData
+message GuideTabInfos {
+    repeated GuideTabInfo data = 1;
+}
+
+// ExcelFile: ContentsGuideData
+message GuideTexts {
+    repeated GuideText data = 1;
+}
+
+// ExcelFile: GuildBattleData
+message GuildBattleBosss {
+    repeated GuildBattleBoss data = 1;
+}
+
+// ExcelFile: GuildBattleData
+message GuildBattleLandInfos {
+    repeated GuildBattleLandInfo data = 1;
+}
+
+// ExcelFile: SeasonData
+message GuildBattleSeasons {
+    repeated GuildBattleSeason data = 1;
+}
+
+// ExcelFile: GuildBattleData
+message GuildContributeRewards {
+    repeated GuildContributeReward data = 1;
+}
+
+// ExcelFile: GuildData
+message GuildEmblems {
+    repeated GuildEmblem data = 1;
+}
+
+// ExcelFile: GuildEventData
+message GuildEventContributionRewards {
+    repeated GuildEventContributionReward data = 1;
+}
+
+// ExcelFile: GuildEventData
+message GuildEventDeliveryQuests {
+    repeated GuildEventDeliveryQuest data = 1;
+}
+
+// ExcelFile: GuildEventData
+message GuildEventNPCs {
+    repeated GuildEventNPC data = 1;
+}
+
+// ExcelFile: GuildEventData
+message GuildEventQuests {
+    repeated GuildEventQuest data = 1;
+}
+
+// ExcelFile: GuildEventData
+message GuildEventRankingRewards {
+    repeated GuildEventRankingReward data = 1;
+}
+
+// ExcelFile: ItemData
+message GuildExpPotionItemValues {
+    repeated GuildExpPotionItemValue data = 1;
+}
+
+// ExcelFile: GuildQuestData
+message GuildItemPackages {
+    repeated GuildItemPackage data = 1;
+}
+
+// ExcelFile: GuildData
+message GuildLevelUps {
+    repeated GuildLevelUp data = 1;
+}
+
+// ExcelFile: GuildQuestData
+message GuildQuestPools {
+    repeated GuildQuestPool data = 1;
+}
+
+// ExcelFile: GuildBattleData
+message GuildRankingRewards {
+    repeated GuildRankingReward data = 1;
+}
+
+// ExcelFile: RelicData
+message GuildRelics {
+    repeated GuildRelic data = 1;
+}
+
+// ExcelFile: RelicData
+message GuildRelicEnchants {
+    repeated GuildRelicEnchant data = 1;
+}
+
+// ExcelFile: RelicData
+message GuildRelicGroups {
+    repeated GuildRelicGroup data = 1;
+}
+
+// ExcelFile: RelicData
+message GuildRelicPassives {
+    repeated GuildRelicPassive data = 1;
+}
+
+// ExcelFile: RequirementData
+message GuildRequirements {
+    repeated GuildRequirement data = 1;
+}
+
+// ExcelFile: GuildBattleData
+message GuildTierRankingRewards {
+    repeated GuildTierRankingReward data = 1;
+}
+
+// ExcelFile: GuildTownData
+message GuildTownChunks {
+    repeated GuildTownChunk data = 1;
+}
+
+// ExcelFile: GuildTownData
+message GuildTownSegments {
+    repeated GuildTownSegment data = 1;
+}
+
+// ExcelFile: HelpData
+message HelpItemNums {
+    repeated HelpItemNum data = 1;
+}
+
+// ExcelFile: HelpData
+message HelpRewards {
+    repeated HelpReward data = 1;
+}
+
+// ExcelFile: HeroesHallData
+message HeroesHallCookieLevelSlotLists {
+    repeated HeroesHallCookieLevelSlotList data = 1;
+}
+
+// ExcelFile: HeroesHallData
+message HeroesHallStatueLevels {
+    repeated HeroesHallStatueLevel data = 1;
+}
+
+// ExcelFile: TempleHonorData
+message HonorCompletions {
+    repeated HonorCompletion data = 1;
+}
+
+// ExcelFile: GuildQuestData
+message IndieItemShops {
+    repeated IndieItemShop data = 1;
+}
+
+// ExcelFile: InfiniteDungeonData
+message InfiniteDungeons {
+    repeated InfiniteDungeon data = 1;
+}
+
+// ExcelFile: InfiniteDungeonData
+message InfiniteDungeonCourages {
+    repeated InfiniteDungeonCourage data = 1;
+}
+
+// ExcelFile: SeasonData
+message InfiniteDungeonSeasons {
+    repeated InfiniteDungeonSeason data = 1;
+}
+
+// ExcelFile: InfiniteDungeonData
+message InfiniteGuildRankRewards {
+    repeated InfiniteGuildRankReward data = 1;
+}
+
+// ExcelFile: InfiniteDungeonData
+message InfiniteRankRewards {
+    repeated InfiniteRankReward data = 1;
+}
+
+// ExcelFile: InfiniteDungeonData
+message InfiniteRewards {
+    repeated InfiniteReward data = 1;
+}
+
+// ExcelFile: InfiniteDungeonData
+message InfiniteWarriorEffects {
+    repeated InfiniteWarriorEffect data = 1;
+}
+
+// ExcelFile: InitialUserData
+message InitialCookies {
+    repeated InitialCookie data = 1;
+}
+
+// ExcelFile: InitialUserData
+message InitialInventorys {
+    repeated InitialInventory data = 1;
+}
+
+// ExcelFile: InitialUserData
+message InitialProfiles {
+    repeated InitialProfile data = 1;
+}
+
+// ExcelFile: CookieActivityData
+message InteractionToStructureActivitys {
+    repeated InteractionToStructureActivity data = 1;
+}
+
+// ExcelFile: TcInteractSceneData
+message InteractScenes {
+    repeated InteractScene data = 1;
+}
+
+// ExcelFile: TcInteractSceneData
+message InteractSceneDialogs {
+    repeated InteractSceneDialog data = 1;
+}
+
+// ExcelFile: TcInteractSceneData
+message InteractSceneObjects {
+    repeated InteractSceneObject data = 1;
+}
+
+// ExcelFile: TcHardwareData
+message IOSs {
+    repeated IOS data = 1;
+}
+
+// ExcelFile: ItemData
+message Items {
+    repeated Item data = 1;
+}
+
+// ExcelFile: ItemData
+message ItemExchanges {
+    repeated ItemExchange data = 1;
+}
+
+// ExcelFile: ItemData
+message ItemExpires {
+    repeated ItemExpire data = 1;
+}
+
+// ExcelFile: ItemData
+message ItemPoints {
+    repeated ItemPoint data = 1;
+}
+
+// ExcelFile: ItemShopData
+message ItemShops {
+    repeated ItemShop data = 1;
+}
+
+// ExcelFile: ItemShopData
+message ItemShopClosings {
+    repeated ItemShopClosing data = 1;
+}
+
+// ExcelFile: ItemShopData
+message ItemShopManagements {
+    repeated ItemShopManagement data = 1;
+}
+
+// ExcelFile: ItemShopData
+message ItemShopMigrations {
+    repeated ItemShopMigration data = 1;
+}
+
+// ExcelFile: ItemData
+message ItemStorages {
+    repeated ItemStorage data = 1;
+}
+
+// ExcelFile: ItemData
+message ItemTypeAttributes {
+    repeated ItemTypeAttribute data = 1;
+}
+
+// ExcelFile: JamStoneData
+message JamStones {
+    repeated JamStone data = 1;
+}
+
+// ExcelFile: JamStoneDungeonData
+message JamStoneDungeons {
+    repeated JamStoneDungeon data = 1;
+}
+
+// ExcelFile: JamStoneDungeonData
+message JamStoneDungeonGroups {
+    repeated JamStoneDungeonGroup data = 1;
+}
+
+// ExcelFile: JamStoneDungeonData
+message JamStoneDungeonLevelEffects {
+    repeated JamStoneDungeonLevelEffect data = 1;
+}
+
+// ExcelFile: JamStoneData
+message JamStoneEnchants {
+    repeated JamStoneEnchant data = 1;
+}
+
+// ExcelFile: JamStoneData
+message JamStonePassives {
+    repeated JamStonePassive data = 1;
+}
+
+// ExcelFile: JamStoneData
+message JamStoneUpgrades {
+    repeated JamStoneUpgrade data = 1;
+}
+
+// ExcelFile: SubGameData
+message JokerGameCardLists {
+    repeated JokerGameCardList data = 1;
+}
+
+// ExcelFile: SubGameData
+message JokerGameDialogs {
+    repeated JokerGameDialog data = 1;
+}
+
+// ExcelFile: SubGameData
+message JokerGameInfos {
+    repeated JokerGameInfo data = 1;
+}
+
+// ExcelFile: SubGameData
+message JokerGameRewards {
+    repeated JokerGameReward data = 1;
+}
+
+// ExcelFile: SubGameData
+message JokerGameRounds {
+    repeated JokerGameRound data = 1;
+}
+
+// ExcelFile: KingdomBackGroundSkinData
+message KingdomBackgroundSkins {
+    repeated KingdomBackgroundSkin data = 1;
+}
+
+// ExcelFile: TcKingdomLetterData
+message KingdomLetterInfos {
+    repeated KingdomLetterInfo data = 1;
+}
+
+// ExcelFile: TcKingdomLetterData
+message KingdomLetterLevels {
+    repeated KingdomLetterLevel data = 1;
+}
+
+// ExcelFile: KingdomData
+message KingdomLevels {
+    repeated KingdomLevel data = 1;
+}
+
+// ExcelFile: ShopData
+message KingdomPasss {
+    repeated KingdomPass data = 1;
+}
+
+// ExcelFile: SeasonMissionData
+message KingdompassAttendanceRewards {
+    repeated KingdompassAttendanceReward data = 1;
+}
+
+// ExcelFile: TcShopData
+message KingdomPassBanners {
+    repeated KingdomPassBanner data = 1;
+}
+
+// ExcelFile: SeasonMissionData
+message KingdompassRewards {
+    repeated KingdompassReward data = 1;
+}
+
+// ExcelFile: SeasonData
+message KingdomSeasonInfos {
+    repeated KingdomSeasonInfo data = 1;
+}
+
+// ExcelFile: EventMinigameData
+message LaddersAndSlidesEvents {
+    repeated LaddersAndSlidesEvent data = 1;
+}
+
+// ExcelFile: AdventureMapData
+message Lands {
+    repeated Land data = 1;
+}
+
+// ExcelFile: StructureData
+message LandmarkGardens {
+    repeated LandmarkGarden data = 1;
+}
+
+// ExcelFile: RequirementData
+message LandRequirements {
+    repeated LandRequirement data = 1;
+}
+
+// ExcelFile: AdventureMapData
+message LandRules {
+    repeated LandRule data = 1;
+}
+
+// ExcelFile: AdventureMapData
+message LandStandardAbilitys {
+    repeated LandStandardAbility data = 1;
+}
+
+// ExcelFile: LoadingData
+message LoadingDescs {
+    repeated LoadingDesc data = 1;
+}
+
+// ExcelFile: EventData
+message LotteryEvents {
+    repeated LotteryEvent data = 1;
+}
+
+// ExcelFile: EventGachaData
+message LotteryGachaEvents {
+    repeated LotteryGachaEvent data = 1;
+}
+
+// ExcelFile: EventGachaData
+message LuckyBoxEvents {
+    repeated LuckyBoxEvent data = 1;
+}
+
+// ExcelFile: EventGachaData
+message LuckyBoxInfos {
+    repeated LuckyBoxInfo data = 1;
+}
+
+// ExcelFile: MagicCandyData
+message MagicCandys {
+    repeated MagicCandy data = 1;
+}
+
+// ExcelFile: MagicCandyData
+message MagicCandyEnchants {
+    repeated MagicCandyEnchant data = 1;
+}
+
+// ExcelFile: MagicCandyData
+message MagicCandyUpgrades {
+    repeated MagicCandyUpgrade data = 1;
+}
+
+// ExcelFile: SubGameData
+message MemoryGameCardLists {
+    repeated MemoryGameCardList data = 1;
+}
+
+// ExcelFile: SubGameData
+message MemoryGameInfos {
+    repeated MemoryGameInfo data = 1;
+}
+
+// ExcelFile: CookieMenuPacData
+message Menus {
+    repeated Menu data = 1;
+}
+
+// ExcelFile: EventItemProgressData
+message MenuPacProgresss {
+    repeated MenuPacProgress data = 1;
+}
+
+// ExcelFile: TCMiniGameData
+message MergeElements {
+    repeated MergeElement data = 1;
+}
+
+// ExcelFile: TCMiniGameData
+message MergeSeasonRatioRewards {
+    repeated MergeSeasonRatioReward data = 1;
+}
+
+// ExcelFile: TCMiniGameData
+message MergeTiers {
+    repeated MergeTier data = 1;
+}
+
+// ExcelFile: TcShopData
+message MidasShops {
+    repeated MidasShop data = 1;
+}
+
+// ExcelFile: GachaShopData
+message MileageShops {
+    repeated MileageShop data = 1;
+}
+
+// ExcelFile: EventMinigameData
+message MissionBingoEvents {
+    repeated MissionBingoEvent data = 1;
+}
+
+// ExcelFile: ShopData
+message MissionPackages {
+    repeated MissionPackage data = 1;
+}
+
+// ExcelFile: TC_MonopolyData
+message MonopolyCutsceneAlbums {
+    repeated MonopolyCutsceneAlbum data = 1;
+}
+
+// ExcelFile: TC_MonopolyData
+message MonopolyDailyWelfares {
+    repeated MonopolyDailyWelfare data = 1;
+}
+
+// ExcelFile: TC_MonopolyData
+message MonopolyGroupInfos {
+    repeated MonopolyGroupInfo data = 1;
+}
+
+// ExcelFile: TC_MonopolyData
+message MonopolyMaps {
+    repeated MonopolyMap data = 1;
+}
+
+// ExcelFile: TC_MonopolyData
+message MonopolyMergeRewards {
+    repeated MonopolyMergeReward data = 1;
+}
+
+// ExcelFile: TC_MonopolyData
+message MonopolyRacings {
+    repeated MonopolyRacing data = 1;
+}
+
+// ExcelFile: TC_MonopolyData
+message MonopolySettings {
+    repeated MonopolySetting data = 1;
+}
+
+// ExcelFile: TC_MonopolyData
+message MonopolySkatingRewards {
+    repeated MonopolySkatingReward data = 1;
+}
+
+// ExcelFile: TC_MonopolyData
+message MonopolySkatingRobSettings {
+    repeated MonopolySkatingRobSetting data = 1;
+}
+
+// ExcelFile: TC_MonopolyData
+message MonopolySkatingSettings {
+    repeated MonopolySkatingSetting data = 1;
+}
+
+// ExcelFile: EventData
+message MonthlyAttendances {
+    repeated MonthlyAttendance data = 1;
+}
+
+// ExcelFile: MuseumData
+message Museums {
+    repeated Museum data = 1;
+}
+
+// ExcelFile: MuseumData
+message MuseumCases {
+    repeated MuseumCase data = 1;
+}
+
+// ExcelFile: MuseumData
+message MuseumDialogs {
+    repeated MuseumDialog data = 1;
+}
+
+// ExcelFile: MuseumData
+message MuseumObjects {
+    repeated MuseumObject data = 1;
+}
+
+// ExcelFile: MuseumData
+message MuseumPassives {
+    repeated MuseumPassive data = 1;
+}
+
+// ExcelFile: EventData
+message Navigators {
+    repeated Navigator data = 1;
+}
+
+// ExcelFile: NpcManagerData
+message NpcBalloons {
+    repeated NpcBalloon data = 1;
+}
+
+// ExcelFile: NpcManagerData
+message NpcKingdomNpcs {
+    repeated NpcKingdomNpc data = 1;
+}
+
+// ExcelFile: NpcManagerData
+message NpcManagers {
+    repeated NpcManager data = 1;
+}
+
+// ExcelFile: CookieActivityData
+message ObstacleRemovalActivitys {
+    repeated ObstacleRemovalActivity data = 1;
+}
+
+// ExcelFile: OceanData
+message OceanMaps {
+    repeated OceanMap data = 1;
+}
+
+// ExcelFile: OceanData
+message OceanMapObjects {
+    repeated OceanMapObject data = 1;
+}
+
+// ExcelFile: OceanData
+message OceanSegments {
+    repeated OceanSegment data = 1;
+}
+
+// ExcelFile: OceanData
+message OceanVillages {
+    repeated OceanVillage data = 1;
+}
+
+// ExcelFile: TcGuideMissionData
+message OnlineRewards {
+    repeated OnlineReward data = 1;
+}
+
+// ExcelFile: HotTimeData
+message OperationHotTimes {
+    repeated OperationHotTime data = 1;
+}
+
+// ExcelFile: ShopData
+message PackageResetVersions {
+    repeated PackageResetVersion data = 1;
+}
+
+// ExcelFile: ShopData
+message PackageShops {
+    repeated PackageShop data = 1;
+}
+
+// ExcelFile: ShopData
+message PackageShortcutIcons {
+    repeated PackageShortcutIcon data = 1;
+}
+
+// ExcelFile: PassiveData
+message Passives {
+    repeated Passive data = 1;
+}
+
+// ExcelFile: PassiveData
+message PassiveGroups {
+    repeated PassiveGroup data = 1;
+}
+
+// ExcelFile: PassiveData
+message PassiveSteps {
+    repeated PassiveStep data = 1;
+}
+
+// ExcelFile: ShopData
+message PaymentBonuss {
+    repeated PaymentBonus data = 1;
+}
+
+// ExcelFile: ShopData
+message PaymentEventRewards {
+    repeated PaymentEventReward data = 1;
+}
+
+// ExcelFile: TcPictureData
+message Pictures {
+    repeated Picture data = 1;
+}
+
+// ExcelFile: TcPictureData
+message PictureThemes {
+    repeated PictureTheme data = 1;
+}
+
+// ExcelFile: EventData
+message PieceCollectionEvents {
+    repeated PieceCollectionEvent data = 1;
+}
+
+// ExcelFile: ShopData
+message PiggyBanks {
+    repeated PiggyBank data = 1;
+}
+
+// ExcelFile: ItemData
+message PopularityGiftItemValues {
+    repeated PopularityGiftItemValue data = 1;
+}
+
+// ExcelFile: TradingData
+message PortRecommendedItemPools {
+    repeated PortRecommendedItemPool data = 1;
+}
+
+// ExcelFile: TradingData
+message PortRewards {
+    repeated PortReward data = 1;
+}
+
+// ExcelFile: TradingData
+message PortSlots {
+    repeated PortSlot data = 1;
+}
+
+// ExcelFile: ItemShopData
+message PortSpeechs {
+    repeated PortSpeech data = 1;
+}
+
+// ExcelFile: AdventureMapData
+message PostAdventureMapInvokers {
+    repeated PostAdventureMapInvoker data = 1;
+}
+
+// ExcelFile: ItemData
+message PowderRoleTypeItemValues {
+    repeated PowderRoleTypeItemValue data = 1;
+}
+
+// ExcelFile: KingdomData
+message ProfileFrames {
+    repeated ProfileFrame data = 1;
+}
+
+// ExcelFile: KingdomData
+message ProfileImages {
+    repeated ProfileImage data = 1;
+}
+
+// ExcelFile: KingdomData
+message ProfileTitles {
+    repeated ProfileTitle data = 1;
+}
+
+// ExcelFile: BattleData
+message Projectiles {
+    repeated Projectile data = 1;
+}
+
+// ExcelFile: TcGuideMissionData
+message ProportionSettings {
+    repeated ProportionSetting data = 1;
+}
+
+// ExcelFile: ProsperityData
+message ProsperityLevels {
+    repeated ProsperityLevel data = 1;
+}
+
+// ExcelFile: ProsperityData
+message ProsperityLists {
+    repeated ProsperityList data = 1;
+}
+
+// ExcelFile: PushData
+message PushManagements {
+    repeated PushManagement data = 1;
+}
+
+// ExcelFile: TC_FloraGameData
+message PuzzleChallengeLevels {
+    repeated PuzzleChallengeLevel data = 1;
+}
+
+// ExcelFile: TC_FloraGameData
+message PuzzleMainLevels {
+    repeated PuzzleMainLevel data = 1;
+}
+
+// ExcelFile: TC_FloraGameData
+message PuzzleTargets {
+    repeated PuzzleTarget data = 1;
+}
+
+// ExcelFile: PvpData
+message PvpBotProfiles {
+    repeated PvpBotProfile data = 1;
+}
+
+// ExcelFile: PvpData
+message PvpInfos {
+    repeated PvpInfo data = 1;
+}
+
+// ExcelFile: PvpData
+message PvpMatchings {
+    repeated PvpMatching data = 1;
+}
+
+// ExcelFile: PvpData
+message PvpPodiumInfos {
+    repeated PvpPodiumInfo data = 1;
+}
+
+// ExcelFile: PvpData
+message PvpPodiumParts {
+    repeated PvpPodiumPart data = 1;
+}
+
+// ExcelFile: PvpData
+message PvpRecommendedCookieLists {
+    repeated PvpRecommendedCookieList data = 1;
+}
+
+// ExcelFile: SeasonData
+message PvpSeasons {
+    repeated PvpSeason data = 1;
+}
+
+// ExcelFile: SeasonData
+message PvpSeasonGroups {
+    repeated PvpSeasonGroup data = 1;
+}
+
+// ExcelFile: PvpData
+message PvpStatues {
+    repeated PvpStatue data = 1;
+}
+
+// ExcelFile: PvpData
+message PvpTiers {
+    repeated PvpTier data = 1;
+}
+
+// ExcelFile: PvpData
+message PvpUsableProfileImageLists {
+    repeated PvpUsableProfileImageList data = 1;
+}
+
+// ExcelFile: PvpData
+message PvpUsableProfileTitleLists {
+    repeated PvpUsableProfileTitleList data = 1;
+}
+
+// ExcelFile: PvpData
+message PvpWinningStreaks {
+    repeated PvpWinningStreak data = 1;
+}
+
+// ExcelFile: QuestData
+message Quests {
+    repeated Quest data = 1;
+}
+
+// ExcelFile: QuestData
+message QuestGroupInfos {
+    repeated QuestGroupInfo data = 1;
+}
+
+// ExcelFile: GachaShopData
+message RainbowCrystalShops {
+    repeated RainbowCrystalShop data = 1;
+}
+
+// ExcelFile: RandomDungeonData
+message RandomDungeons {
+    repeated RandomDungeon data = 1;
+}
+
+// ExcelFile: RandomDungeonData
+message RandomDungeonConfigs {
+    repeated RandomDungeonConfig data = 1;
+}
+
+// ExcelFile: RandomDungeonData
+message RandomDungeonCookiePools {
+    repeated RandomDungeonCookiePool data = 1;
+}
+
+// ExcelFile: RandomDungeonData
+message RandomDungeonEffects {
+    repeated RandomDungeonEffect data = 1;
+}
+
+// ExcelFile: RandomDungeonData
+message RandomDungeonLevelUps {
+    repeated RandomDungeonLevelUp data = 1;
+}
+
+// ExcelFile: RandomDungeonData
+message RandomDungeonLevelUpEffectGroups {
+    repeated RandomDungeonLevelUpEffectGroup data = 1;
+}
+
+// ExcelFile: RandomDungeonData
+message RandomDungeonRankings {
+    repeated RandomDungeonRanking data = 1;
+}
+
+// ExcelFile: SeasonData
+message RandomDungeonSeasons {
+    repeated RandomDungeonSeason data = 1;
+}
+
+// ExcelFile: RandomDungeonData
+message RandomDungeonSlotInfos {
+    repeated RandomDungeonSlotInfo data = 1;
+}
+
+// ExcelFile: RandomDungeonData
+message RandomDungeonTeamRerolls {
+    repeated RandomDungeonTeamReroll data = 1;
+}
+
+// ExcelFile: RandomDungeonData
+message RandomDungeonUpgradeEffects {
+    repeated RandomDungeonUpgradeEffect data = 1;
+}
+
+// ExcelFile: RandomDungeonData
+message RandomDungeonUpgradeEffectGroups {
+    repeated RandomDungeonUpgradeEffectGroup data = 1;
+}
+
+// ExcelFile: RandomDungeonData
+message RandomDungeonWaves {
+    repeated RandomDungeonWave data = 1;
+}
+
+// ExcelFile: RewardData
+message RandomRewards {
+    repeated RandomReward data = 1;
+}
+
+// ExcelFile: GuildQuestData
+message RankDiscounts {
+    repeated RankDiscount data = 1;
+}
+
+// ExcelFile: BattleData
+message RarityStarWeights {
+    repeated RarityStarWeight data = 1;
+}
+
+// ExcelFile: RewardData
+message RateInfos {
+    repeated RateInfo data = 1;
+}
+
+// ExcelFile: TeamData
+message RecommendTeams {
+    repeated RecommendTeam data = 1;
+}
+
+// ExcelFile: RecordTowerData
+message RecordTowerFrames {
+    repeated RecordTowerFrame data = 1;
+}
+
+// ExcelFile: RecordTowerData
+message RecordTowerGuildRelics {
+    repeated RecordTowerGuildRelic data = 1;
+}
+
+// ExcelFile: RecordTowerData
+message RecordTowerInfoMessages {
+    repeated RecordTowerInfoMessage data = 1;
+}
+
+// ExcelFile: RecordTowerData
+message RecordTowerTabs {
+    repeated RecordTowerTab data = 1;
+}
+
+// ExcelFile: RelayDungeonData
+message RelayDungeonCookieSettings {
+    repeated RelayDungeonCookieSetting data = 1;
+}
+
+// ExcelFile: RelayDungeonData
+message RelayDungeonEffects {
+    repeated RelayDungeonEffect data = 1;
+}
+
+// ExcelFile: RelayDungeonData
+message RelayDungeonRankings {
+    repeated RelayDungeonRanking data = 1;
+}
+
+// ExcelFile: SeasonData
+message RelayDungeonSeasons {
+    repeated RelayDungeonSeason data = 1;
+}
+
+// ExcelFile: RelayDungeonData
+message RelayDungeonStages {
+    repeated RelayDungeonStage data = 1;
+}
+
+// ExcelFile: RelayDungeonData
+message RelayDungeonStageGroups {
+    repeated RelayDungeonStageGroup data = 1;
+}
+
+// ExcelFile: RelayDungeonData
+message RelayDungeonTactics {
+    repeated RelayDungeonTactic data = 1;
+}
+
+// ExcelFile: RewardData
+message ReplacedRewards {
+    repeated ReplacedReward data = 1;
+}
+
+// ExcelFile: TcReportData
+message ReportReasons {
+    repeated ReportReason data = 1;
+}
+
+// ExcelFile: TcReportData
+message ReportScenes {
+    repeated ReportScene data = 1;
+}
+
+// ExcelFile: RequirementData
+message Requirements {
+    repeated Requirement data = 1;
+}
+
+// ExcelFile: ReservedIdData
+message ReservedIds {
+    repeated ReservedId data = 1;
+}
+
+// ExcelFile: ReservedIdData
+message ReservedIdForClients {
+    repeated ReservedIdForClient data = 1;
+}
+
+// ExcelFile: KingdomData
+message ResetableContents {
+    repeated ResetableContent data = 1;
+}
+
+// ExcelFile: GameData
+message ResourceVersions {
+    repeated ResourceVersion data = 1;
+}
+
+// ExcelFile: RewardData
+message RewardChestResources {
+    repeated RewardChestResource data = 1;
+}
+
+// ExcelFile: HotTimeData
+message RewardHotTimes {
+    repeated RewardHotTime data = 1;
+}
+
+// ExcelFile: MailData
+message RewardMails {
+    repeated RewardMail data = 1;
+}
+
+// ExcelFile: ItemShopData
+message RewardResourceKeys {
+    repeated RewardResourceKey data = 1;
+}
+
+// ExcelFile: RhythmData
+message Rhythms {
+    repeated Rhythm data = 1;
+}
+
+// ExcelFile: RhythmData
+message RhythmConfigs {
+    repeated RhythmConfig data = 1;
+}
+
+// ExcelFile: RhythmData
+message RhythmFlags {
+    repeated RhythmFlag data = 1;
+}
+
+// ExcelFile: EventDungeonData
+message RhythmInfos {
+    repeated RhythmInfo data = 1;
+}
+
+// ExcelFile: RhythmData
+message RhythmNotes {
+    repeated RhythmNote data = 1;
+}
+
+// ExcelFile: RhythmData
+message RhythmPoints {
+    repeated RhythmPoint data = 1;
+}
+
+// ExcelFile: SubGameData
+message RotationPuzzleGameInfos {
+    repeated RotationPuzzleGameInfo data = 1;
+}
+
+// ExcelFile: SubGameData
+message RotationPuzzleGameTileLists {
+    repeated RotationPuzzleGameTileList data = 1;
+}
+
+// ExcelFile: TempleHonorData
+message SeasonalHonorTrophys {
+    repeated SeasonalHonorTrophy data = 1;
+}
+
+// ExcelFile: SeasonMissionData
+message SeasonMissions {
+    repeated SeasonMission data = 1;
+}
+
+// ExcelFile: SeasonData
+message SeasonPolicys {
+    repeated SeasonPolicy data = 1;
+}
+
+// ExcelFile: SeasonData
+message SeasonRules {
+    repeated SeasonRule data = 1;
+}
+
+// ExcelFile: TcPaperData
+message SeasonSettlements {
+    repeated SeasonSettlement data = 1;
+}
+
+// ExcelFile: ShopData
+message SelectablePackageRewards {
+    repeated SelectablePackageReward data = 1;
+}
+
+// ExcelFile: RewardData
+message SelectablePools {
+    repeated SelectablePool data = 1;
+}
+
+// ExcelFile: RewardData
+message SelectableRewards {
+    repeated SelectableReward data = 1;
+}
+
+// ExcelFile: CutSceneData
+message SelectionDialogRequirements {
+    repeated SelectionDialogRequirement data = 1;
+}
+
+// ExcelFile: ServerListData
+message ServerLists {
+    repeated ServerList data = 1;
+}
+
+// ExcelFile: TcShareData
+message ShareContentss {
+    repeated ShareContents data = 1;
+}
+
+// ExcelFile: TcChannelFunctionData
+message ShareFunctions {
+    repeated ShareFunction data = 1;
+}
+
+// ExcelFile: TcShareData
+message ShareScenes {
+    repeated ShareScene data = 1;
+}
+
+// ExcelFile: ShopDescriptionData
+message ShopDescriptions {
+    repeated ShopDescription data = 1;
+}
+
+// ExcelFile: ShopData
+message ShopDisplayBanners {
+    repeated ShopDisplayBanner data = 1;
+}
+
+// ExcelFile: ShopData
+message ShopDisplayCategorys {
+    repeated ShopDisplayCategory data = 1;
+}
+
+// ExcelFile: ShopData
+message ShopDisplayPopups {
+    repeated ShopDisplayPopup data = 1;
+}
+
+// ExcelFile: ShopData
+message ShopDisplayTabs {
+    repeated ShopDisplayTab data = 1;
+}
+
+// ExcelFile: ShopData
+message ShopLabels {
+    repeated ShopLabel data = 1;
+}
+
+// ExcelFile: ShopData
+message ShopManagements {
+    repeated ShopManagement data = 1;
+}
+
+// ExcelFile: ShopData
+message ShoppingBoxRewards {
+    repeated ShoppingBoxReward data = 1;
+}
+
+// ExcelFile: ItemShopData
+message ShopSlotItems {
+    repeated ShopSlotItem data = 1;
+}
+
+// ExcelFile: RequirementData
+message Shortcuts {
+    repeated Shortcut data = 1;
+}
+
+// ExcelFile: CookieSkinData
+message ShowCookieSkinGachaIntroRaritys {
+    repeated ShowCookieSkinGachaIntroRarity data = 1;
+}
+
+// ExcelFile: BattleData
+message Skills {
+    repeated Skill data = 1;
+}
+
+// ExcelFile: BattleData
+message SkillLevelStats {
+    repeated SkillLevelStat data = 1;
+}
+
+// ExcelFile: SmashData
+message SmashBotProfiles {
+    repeated SmashBotProfile data = 1;
+}
+
+// ExcelFile: SmashData
+message SmashGuildRanks {
+    repeated SmashGuildRank data = 1;
+}
+
+// ExcelFile: SmashData
+message SmashMatchings {
+    repeated SmashMatching data = 1;
+}
+
+// ExcelFile: SmashData
+message SmashRankingRewards {
+    repeated SmashRankingReward data = 1;
+}
+
+// ExcelFile: SeasonData
+message SmashSeasons {
+    repeated SmashSeason data = 1;
+}
+
+// ExcelFile: SmashData
+message SmashTiers {
+    repeated SmashTier data = 1;
+}
+
+// ExcelFile: SmashData
+message SmashUsableProfileImageLists {
+    repeated SmashUsableProfileImageList data = 1;
+}
+
+// ExcelFile: SmashData
+message SmashUsableProfileTitleLists {
+    repeated SmashUsableProfileTitleList data = 1;
+}
+
+// ExcelFile: SocialRaidData
+message SocialRaidBattles {
+    repeated SocialRaidBattle data = 1;
+}
+
+// ExcelFile: SocialRaidData
+message SocialRaidBossResources {
+    repeated SocialRaidBossResource data = 1;
+}
+
+// ExcelFile: SocialRaidData
+message SocialRaidGeneratePoints {
+    repeated SocialRaidGeneratePoint data = 1;
+}
+
+// ExcelFile: SocialRaidData
+message SocialRaidRewards {
+    repeated SocialRaidReward data = 1;
+}
+
+// ExcelFile: SeasonData
+message SocialRaidSeasons {
+    repeated SocialRaidSeason data = 1;
+}
+
+// ExcelFile: SocialData
+message SocialRandomGifts {
+    repeated SocialRandomGift data = 1;
+}
+
+// ExcelFile: SoundData
+message SoundEventOptions {
+    repeated SoundEventOption data = 1;
+}
+
+// ExcelFile: SpecialEpisodeData
+message SpecialEpisodes {
+    repeated SpecialEpisode data = 1;
+}
+
+// ExcelFile: SpecialEpisodeData
+message SpecialEpisodeBackgrounds {
+    repeated SpecialEpisodeBackground data = 1;
+}
+
+// ExcelFile: SeasonData
+message SpecialEpisodeBoostSeasons {
+    repeated SpecialEpisodeBoostSeason data = 1;
+}
+
+// ExcelFile: SpecialEpisodeData, TC_SpecialEpisodeData
+message SpecialEpisodeCollections {
+    repeated SpecialEpisodeCollection data = 1;
+}
+
+// ExcelFile: SpecialEpisodeData
+message SpecialEpisodeGroupInfos {
+    repeated SpecialEpisodeGroupInfo data = 1;
+}
+
+// ExcelFile: SpecialEpisodeData
+message SpecialEpisodeLandNodes {
+    repeated SpecialEpisodeLandNode data = 1;
+}
+
+// ExcelFile: SpecialEpisodeData, TC_SpecialEpisodeData
+message SpecialEpisodeNodes {
+    repeated SpecialEpisodeNode data = 1;
+}
+
+// ExcelFile: SpecialEpisodeData
+message SpecialEpisodeRunModeNodes {
+    repeated SpecialEpisodeRunModeNode data = 1;
+}
+
+// ExcelFile: SpecialEpisodeData, TC_SpecialEpisodeData
+message SpecialEpisodeSelectLandNodes {
+    repeated SpecialEpisodeSelectLandNode data = 1;
+}
+
+// ExcelFile: SpecialEpisodeData
+message SpecialEpisodeShopInfos {
+    repeated SpecialEpisodeShopInfo data = 1;
+}
+
+// ExcelFile: TcRewardData
+message SpecialMails {
+    repeated SpecialMail data = 1;
+}
+
+// ExcelFile: CookieDialogData
+message SpeechBalloonRewards {
+    repeated SpeechBalloonReward data = 1;
+}
+
+// ExcelFile: SquareData
+message SquareActions {
+    repeated SquareAction data = 1;
+}
+
+// ExcelFile: SquareData
+message SquareBuffs {
+    repeated SquareBuff data = 1;
+}
+
+// ExcelFile: SquareData
+message SquareMaps {
+    repeated SquareMap data = 1;
+}
+
+// ExcelFile: SquareData
+message SquareMapNpcs {
+    repeated SquareMapNpc data = 1;
+}
+
+// ExcelFile: SquareData
+message SquareMapObjects {
+    repeated SquareMapObject data = 1;
+}
+
+// ExcelFile: SquareData
+message SquareNpcDialogs {
+    repeated SquareNpcDialog data = 1;
+}
+
+// ExcelFile: SquareData
+message SquareNpcMenus {
+    repeated SquareNpcMenu data = 1;
+}
+
+// ExcelFile: SquareData
+message SquareSettings {
+    repeated SquareSetting data = 1;
+}
+
+// ExcelFile: SquareData
+message SquareSettingForClients {
+    repeated SquareSettingForClient data = 1;
+}
+
+// ExcelFile: SquareData
+message SquareZones {
+    repeated SquareZone data = 1;
+}
+
+// ExcelFile: BattleData
+message StandardAbilitys {
+    repeated StandardAbility data = 1;
+}
+
+// ExcelFile: StoryAdventureData
+message StoryAdventureBattleTaskRewards {
+    repeated StoryAdventureBattleTaskReward data = 1;
+}
+
+// ExcelFile: StoryAdventureData
+message StoryAdventureEpisodes {
+    repeated StoryAdventureEpisode data = 1;
+}
+
+// ExcelFile: StoryAdventureData
+message StoryAdventureMaps {
+    repeated StoryAdventureMap data = 1;
+}
+
+// ExcelFile: StoryAdventureData
+message StoryAdventureMissions {
+    repeated StoryAdventureMission data = 1;
+}
+
+// ExcelFile: StoryAdventureData
+message StoryAdventureNodes {
+    repeated StoryAdventureNode data = 1;
+}
+
+// ExcelFile: StoryAdventureData
+message StoryAdventureTasks {
+    repeated StoryAdventureTask data = 1;
+}
+
+// ExcelFile: RecordTowerData
+message StoryRecords {
+    repeated StoryRecord data = 1;
+}
+
+// ExcelFile: RecordTowerData
+message StoryRecordGroups {
+    repeated StoryRecordGroup data = 1;
+}
+
+// ExcelFile: StructureResourceData
+message Structures {
+    repeated Structure data = 1;
+}
+
+// ExcelFile: EventData
+message StructureEvents {
+    repeated StructureEvent data = 1;
+}
+
+// ExcelFile: StructureData
+message StructureGachas {
+    repeated StructureGacha data = 1;
+}
+
+// ExcelFile: StructureData
+message StructureInteractionLists {
+    repeated StructureInteractionList data = 1;
+}
+
+// ExcelFile: StructureData
+message StructureLevelUps {
+    repeated StructureLevelUp data = 1;
+}
+
+// ExcelFile: StructureResourceData
+message StructureMerges {
+    repeated StructureMerge data = 1;
+}
+
+// ExcelFile: StructureData
+message StructurePassiveDisplayNames {
+    repeated StructurePassiveDisplayName data = 1;
+}
+
+// ExcelFile: StructureResourceData
+message StructurePlacementSetFunctions {
+    repeated StructurePlacementSetFunction data = 1;
+}
+
+// ExcelFile: StructureData
+message StructureProductions {
+    repeated StructureProduction data = 1;
+}
+
+// ExcelFile: StructureData
+message StructureShops {
+    repeated StructureShop data = 1;
+}
+
+// ExcelFile: StructureSkinData
+message StructureSkins {
+    repeated StructureSkin data = 1;
+}
+
+// ExcelFile: EventData
+message SubGameEvents {
+    repeated SubGameEvent data = 1;
+}
+
+// ExcelFile: SubGameData
+message SubGameGroups {
+    repeated SubGameGroup data = 1;
+}
+
+// ExcelFile: ExpeditionData
+message SuccessRateGradeScores {
+    repeated SuccessRateGradeScore data = 1;
+}
+
+// ExcelFile: ExpeditionData
+message SuccessRateLevelScores {
+    repeated SuccessRateLevelScore data = 1;
+}
+
+// ExcelFile: ExpeditionData
+message SuccessRateRarityScores {
+    repeated SuccessRateRarityScore data = 1;
+}
+
+// ExcelFile: EventData
+message SurveyEvents {
+    repeated SurveyEvent data = 1;
+}
+
+// ExcelFile: TcAutoProduceData
+message TcAutoBuffs {
+    repeated TcAutoBuff data = 1;
+}
+
+// ExcelFile: TcAutoProduceData
+message TcAutoProductsRanges {
+    repeated TcAutoProductsRange data = 1;
+}
+
+// ExcelFile: TcBridgeData
+message TcBridges {
+    repeated TcBridge data = 1;
+}
+
+// ExcelFile: ItemData
+message TcBuffTimes {
+    repeated TcBuffTime data = 1;
+}
+
+// ExcelFile: TcEventData
+message TcEventInfoRedDots {
+    repeated TcEventInfoRedDot data = 1;
+}
+
+// ExcelFile: TcGamePvpData
+message TcGamePvpTiers {
+    repeated TcGamePvpTier data = 1;
+}
+
+// ExcelFile: TcGameData
+message TcGameSettings {
+    repeated TcGameSetting data = 1;
+}
+
+// ExcelFile: TcGameData
+message TcGameSettingForClients {
+    repeated TcGameSettingForClient data = 1;
+}
+
+// ExcelFile: GachaShopData
+message TcHiddenBounds {
+    repeated TcHiddenBound data = 1;
+}
+
+// ExcelFile: TcRewardCheckData
+message TcItemValues {
+    repeated TcItemValue data = 1;
+}
+
+// ExcelFile: TcSquareData
+message TcJellyLgls {
+    repeated TcJellyLgl data = 1;
+}
+
+// ExcelFile: TcLimintedMenuData
+message TcLimitedMenuContents {
+    repeated TcLimitedMenuContent data = 1;
+}
+
+// ExcelFile: TcLimintedMenuData
+message TcLimitedMenuInfos {
+    repeated TcLimitedMenuInfo data = 1;
+}
+
+// ExcelFile: TcSquareData
+message TcLobbyChannels {
+    repeated TcLobbyChannel data = 1;
+}
+
+// ExcelFile: TcSquareData
+message TcLobbySettings {
+    repeated TcLobbySetting data = 1;
+}
+
+// ExcelFile: TcSquareData
+message TcOpenTimes {
+    repeated TcOpenTime data = 1;
+}
+
+// ExcelFile: GachaShopData
+message TcPickupBounds {
+    repeated TcPickupBound data = 1;
+}
+
+// ExcelFile: KingdomData
+message TcProfileFrames {
+    repeated TcProfileFrame data = 1;
+}
+
+// ExcelFile: TcQuestionnaireData
+message TcQuestionnaires {
+    repeated TcQuestionnaire data = 1;
+}
+
+// ExcelFile: SquareData
+message TcSquareMapObjectSchedules {
+    repeated TcSquareMapObjectSchedule data = 1;
+}
+
+// ExcelFile: SquareData
+message TcSquareMapStructures {
+    repeated TcSquareMapStructure data = 1;
+}
+
+// ExcelFile: TcSquareData
+message TcTeahouseCollections {
+    repeated TcTeahouseCollection data = 1;
+}
+
+// ExcelFile: TcTestGenProtoData
+message TcTestGenProtos {
+    repeated TcTestGenProto data = 1;
+}
+
+// ExcelFile: TcRewardData
+message TcToppings {
+    repeated TcTopping data = 1;
+}
+
+// ExcelFile: TownData
+message TerritoryStageRewards {
+    repeated TerritoryStageReward data = 1;
+}
+
+// ExcelFile: StructureResourceData
+message Themes {
+    repeated Theme data = 1;
+}
+
+// ExcelFile: StructureResourceData
+message ThemeStructures {
+    repeated ThemeStructure data = 1;
+}
+
+// ExcelFile: EventData
+message TimeAttendances {
+    repeated TimeAttendance data = 1;
+}
+
+// ExcelFile: ItemData
+message TimeReducerItemValues {
+    repeated TimeReducerItemValue data = 1;
+}
+
+// ExcelFile: ToppingData
+message Toppings {
+    repeated Topping data = 1;
+}
+
+// ExcelFile: ToppingData
+message ToppingCombinations {
+    repeated ToppingCombination data = 1;
+}
+
+// ExcelFile: ToppingData
+message ToppingGroups {
+    repeated ToppingGroup data = 1;
+}
+
+// ExcelFile: ToppingData
+message ToppingMainOptions {
+    repeated ToppingMainOption data = 1;
+}
+
+// ExcelFile: ToppingData
+message ToppingMarkers {
+    repeated ToppingMarker data = 1;
+}
+
+// ExcelFile: ToppingData
+message ToppingPresetUnlockForUIs {
+    repeated ToppingPresetUnlockForUI data = 1;
+}
+
+// ExcelFile: ToppingData
+message ToppingSetOptions {
+    repeated ToppingSetOption data = 1;
+}
+
+// ExcelFile: TeamData
+message ToppingSettings {
+    repeated ToppingSetting data = 1;
+}
+
+// ExcelFile: ToppingData
+message ToppingSlotUnlocks {
+    repeated ToppingSlotUnlock data = 1;
+}
+
+// ExcelFile: BattlePresetData
+message ToppingsPresets {
+    repeated ToppingsPreset data = 1;
+}
+
+// ExcelFile: ToppingData
+message ToppingSubOptionPools {
+    repeated ToppingSubOptionPool data = 1;
+}
+
+// ExcelFile: ToppingData
+message ToppingThemes {
+    repeated ToppingTheme data = 1;
+}
+
+// ExcelFile: ToppingData
+message ToppingUpgrades {
+    repeated ToppingUpgrade data = 1;
+}
+
+// ExcelFile: TowerAdventureData
+message TowerAdventureDeckForMacros {
+    repeated TowerAdventureDeckForMacro data = 1;
+}
+
+// ExcelFile: TowerAdventureData
+message TowerAdventureJumpingInfos {
+    repeated TowerAdventureJumpingInfo data = 1;
+}
+
+// ExcelFile: TowerAdventureData
+message TowerAdventureLayerPools {
+    repeated TowerAdventureLayerPool data = 1;
+}
+
+// ExcelFile: TowerAdventureData
+message TowerAdventureNodes {
+    repeated TowerAdventureNode data = 1;
+}
+
+// ExcelFile: TowerAdventureData
+message TowerAdventurePvpBots {
+    repeated TowerAdventurePvpBot data = 1;
+}
+
+// ExcelFile: SeasonData
+message TowerAdventureSeasons {
+    repeated TowerAdventureSeason data = 1;
+}
+
+// ExcelFile: TowerAdventureData
+message TowerAdventureTeamConditions {
+    repeated TowerAdventureTeamCondition data = 1;
+}
+
+// ExcelFile: TownData
+message TownChunks {
+    repeated TownChunk data = 1;
+}
+
+// ExcelFile: TownContestData
+message TownContests {
+    repeated TownContest data = 1;
+}
+
+// ExcelFile: TownContestData
+message TownContestRewards {
+    repeated TownContestReward data = 1;
+}
+
+// ExcelFile: TownContestData
+message TownContestVotingPools {
+    repeated TownContestVotingPool data = 1;
+}
+
+// ExcelFile: StructureData
+message TownPresetStorages {
+    repeated TownPresetStorage data = 1;
+}
+
+// ExcelFile: TownData
+message TownSegments {
+    repeated TownSegment data = 1;
+}
+
+// ExcelFile: MusicBoxData
+message Tracks {
+    repeated Track data = 1;
+}
+
+// ExcelFile: CollaboData
+message TrailerLobbyMapObjects {
+    repeated TrailerLobbyMapObject data = 1;
+}
+
+// ExcelFile: TreasureData
+message Treasures {
+    repeated Treasure data = 1;
+}
+
+// ExcelFile: TreasureData
+message TreasureEnchants {
+    repeated TreasureEnchant data = 1;
+}
+
+// ExcelFile: TreasureData
+message TreasureGradeResources {
+    repeated TreasureGradeResource data = 1;
+}
+
+// ExcelFile: TreasureData
+message TreasureSeriess {
+    repeated TreasureSeries data = 1;
+}
+
+// ExcelFile: TreasureData
+message TreasureSlotUnlocks {
+    repeated TreasureSlotUnlock data = 1;
+}
+
+// ExcelFile: AncientTrialData
+message TrialBlackLists {
+    repeated TrialBlackList data = 1;
+}
+
+// ExcelFile: AncientTrialData
+message TrialResources {
+    repeated TrialResource data = 1;
+}
+
+// ExcelFile: TutorialData
+message Tutorials {
+    repeated Tutorial data = 1;
+}
+
+// ExcelFile: SoundData
+message UISoundLists {
+    repeated UISoundList data = 1;
+}
+
+// ExcelFile: LanguagePackData
+message UIStringLists {
+    repeated UIStringList data = 1;
+}
+
+// ExcelFile: EventData
+message UsingItemEvents {
+    repeated UsingItemEvent data = 1;
+}
+
+// ExcelFile: BattleData
+message VisualEffects {
+    repeated VisualEffect data = 1;
+}
+
+// ExcelFile: VisualNovelData
+message VisualNovelEndings {
+    repeated VisualNovelEnding data = 1;
+}
+
+// ExcelFile: VisualNovelData
+message VisualNovelInfos {
+    repeated VisualNovelInfo data = 1;
+}
+
+// ExcelFile: VisualNovelData
+message VisualNovelPoints {
+    repeated VisualNovelPoint data = 1;
+}
+
+// ExcelFile: VisualNovelData
+message VisualNovelTasks {
+    repeated VisualNovelTask data = 1;
+}
+
+// ExcelFile: EventData
+message VotingEvents {
+    repeated VotingEvent data = 1;
+}
+
+// ExcelFile: SeasonData
+message WatermelonSeasons {
+    repeated WatermelonSeason data = 1;
+}
+
+// ExcelFile: TcGuideMissionData
+message WeekendBounuss {
+    repeated WeekendBounus data = 1;
+}
+
+// ExcelFile: TradingData
+message WishtreeDailyGifts {
+    repeated WishtreeDailyGift data = 1;
+}
+
+// ExcelFile: CookieDialogData
+message WishtreeDialogs {
+    repeated WishtreeDialog data = 1;
+}
+
+// ExcelFile: TradingData
+message WishtreeQuests {
+    repeated WishtreeQuest data = 1;
+}
+
+// ExcelFile: TcPaperData
+message ZonePaperShops {
+    repeated ZonePaperShop data = 1;
+}
+
+// ExcelFile: TcPaperData
+message ZonePaperStorages {
+    repeated ZonePaperStorage data = 1;
+}
+
+// ExcelFile: TcPaperData
+message ZonePaperThemes {
+    repeated ZonePaperTheme data = 1;
+}
+
