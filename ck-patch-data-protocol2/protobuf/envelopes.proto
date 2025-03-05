@@ -1,11 +1,16 @@
-syntax = "proto3";
+//syntax = "proto3";
+
+edition = "2023";
 
 package ck;
+
+import "google/protobuf/go_features.proto";
+option features.(pb.go).api_level = API_OPAQUE;
 
 option java_package = "com.devsisters.ck.patchdata.protobuf";
 option csharp_namespace = "Patchdata.Protobuf";
 option java_multiple_files = true;
-option go_package = "example.com/project/myprotobuf";
+option go_package = "example.com/project/patch_data2";
 
 // Envelope은 repeated 혹은 singular의 하나의 필드로 구성되어야 합니다.
 

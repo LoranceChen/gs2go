@@ -5,8 +5,8 @@ import (
 	patch_data "gs2go/ck-patch-data-protocol/protobuf"
 )
 
-func A233324522211ssss122222222235() {
-	fmt.Println("asd")
+func A233324522211ssss1222222222ss3adsad5() {
+	fmt.Println("asdsssssaaa22sads2")
 	empty := patch_data.Empty{}
 	fmt.Println(empty)
 }

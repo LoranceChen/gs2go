@@ -5,9 +5,6 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"github.com/exaring/otelpgx"
-	"github.com/jackc/pgx/v5"
-	"github.com/jackc/pgx/v5/pgxpool"
 	patch_data "gs2go/ck-patch-data-protocol/protobuf"
 	patch_data2 "gs2go/ck-patch-data-protocol2/protobuf"
 	"gs2go/proto_define"
@@ -15,6 +12,10 @@ import (
 	"net/http"
 	"os"
 	"text/template"
+
+	"github.com/exaring/otelpgx"
+	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/pgxpool"
 
 	"google.golang.org/protobuf/proto"
 
@@ -64,7 +65,7 @@ func main() {
 		ApplicationName: "simple.app",
 
 		// replace this with the address of pyroscope server
-		ServerAddress: "http://profiling.cmk.woa.com",
+		ServerAddress: "http://kmc.aow.com",
 
 		// you can disable logging by setting this to nil
 		Logger: pyroscope.StandardLogger,
@@ -183,8 +184,7 @@ func dbPool() {
 
 func wspb(w http.ResponseWriter, r *http.Request) {
 
-	a := patch_data.NullableInt{Value: &patch_data.NullableInt_Int{Int: 10}}
-
+	_ = patch_data.NullableInt{Value: &patch_data.NullableInt_Int{Int: 10}}
 	router.WsPbRouter(w, r, upgrader)
 }
 
@@ -290,14 +290,24 @@ func testPatchData() {
 		Removed:        false,
 	}
 
-	description := patch_data2.ShopDescription{
-		Id: 1,
-		Description: &patch_data2.TString{
-			Key:          "",
-			OriginalText: "",
-		},
-	}
+	adr := func(s string) *string { return &s }
 
+	tstring := patch_data2.TString_builder{
+		Key:          adr(""),
+		OriginalText: adr(""),
+	}.Build()
+
+	myId := int32(1)
+
+	description := patch_data2.ShopDescription_builder{
+		Id:          &myId,
+		Description: tstring,
+	}.Build()
+
+	a, e := proto.Marshal(description)
+	if e != nil {
+		println("aaaa: %s", a)
+	}
 	fmt.Println(rst)
 	fmt.Println(description)
 

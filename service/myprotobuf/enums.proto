@@ -5,7 +5,7 @@ package ck;
 option java_package = "com.devsisters.ck.patchdata.protobuf";
 option csharp_namespace = "Patchdata.Protobuf";
 option java_multiple_files = true;
-option go_package = "example.com/project/patch_data";
+option go_package = "example.com/project/myprotobuf";
 
 enum AchievementType {
     ACHIEVEMENTTYPE_NONE = 0;

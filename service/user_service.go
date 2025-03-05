@@ -6,7 +6,7 @@ import (
 	"google.golang.org/protobuf/proto"
 	patch_data "gs2go/ck-patch-data-protocol/protobuf"
 	"gs2go/proto_define"
-	myprotobuf "gs2go/service/myprotobuf"
+	//myprotobuf "gs2go/service/myprotobuf"
 )
 
 const (
@@ -28,15 +28,15 @@ func (r *UserRouter) WsPbActionHandler(action ActionName, pb []byte) (proto.Mess
 		Key:          "",
 		OriginalText: "",
 	}
-	_ = myprotobuf.AbilityIcon{
-		Id:                   0,
-		UsageTypeString:      "",
-		IconResourceKey:      "",
-		IconEffectTypeString: "",
-		FrameTypeString:      "",
-		ElementTypeString:    "",
-		UnitTypeString:       "",
-	}
+	//_ = myprotobuf.AbilityIcon{
+	//	Id:                   0,
+	//	UsageTypeString:      "",
+	//	IconResourceKey:      "",
+	//	IconEffectTypeString: "",
+	//	FrameTypeString:      "",
+	//	ElementTypeString:    "",
+	//	UnitTypeString:       "",
+	//}
 
 	if !ok {
 		errMsg := errors.New("not found route: " + string(action))

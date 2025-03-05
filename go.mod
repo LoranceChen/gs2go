@@ -1,13 +1,13 @@
 module gs2go
 
-go 1.22
+go 1.23
 
 require (
 	github.com/gorilla/websocket v1.5.3
 	github.com/grafana/pyroscope-go v1.1.2
 	github.com/jackc/pgx/v5 v5.7.1
 	github.com/rs/zerolog v1.33.0
-	google.golang.org/protobuf v1.34.2
+	google.golang.org/protobuf v1.36.4
 )
 
 require (

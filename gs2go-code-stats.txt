@@ -4,6 +4,7 @@
        5 ./proto_define/build.go
        6 ./ck-patch-data-protocol/protobuf/build.go
        6 ./ck-patch-data-protocol2/protobuf/build.go
+       6 ./service/myprotobuf/build.go
        7 ./ck-patch-data-protocol/protobuf/custom.go
        7 ./router/data.go
        7 ./service/myprotobuf/custom.go
@@ -22,18 +23,19 @@
      131 ./demo/server_main.go
      132 ./router/wspb_router.go
      237 ./proto_define/common_data.pb.go
-     318 ./main.go
      318 ./proto_define/pgsql_service.pb.go
+     325 ./main.go
      485 ./proto_define/user_service.pb.go
     1233 ./ck-patch-data-protocol/protobuf/primary-entities.pb.go
-    1233 ./ck-patch-data-protocol2/protobuf/primary-entities.pb.go
     1233 ./service/myprotobuf/primary-entities.pb.go
+    1795 ./ck-patch-data-protocol2/protobuf/primary-entities.pb.go
+   24202 ./ck-patch-data-protocol2/protobuf/enums.pb.go
    25229 ./ck-patch-data-protocol/protobuf/enums.pb.go
-   25229 ./ck-patch-data-protocol2/protobuf/enums.pb.go
    25229 ./service/myprotobuf/enums.pb.go
+   39566 ./ck-patch-data-protocol2/protobuf/envelopes.pb.go
    39575 ./ck-patch-data-protocol/protobuf/envelopes.pb.go
    39575 ./service/myprotobuf/envelopes.pb.go
-   92874 ./ck-patch-data-protocol2/protobuf/entities.pb.go
-   92879 ./ck-patch-data-protocol/protobuf/entities.pb.go
-   92879 ./service/myprotobuf/entities.pb.go
-  439315 total
+   92874 ./ck-patch-data-protocol/protobuf/entities.pb.go
+   92874 ./service/myprotobuf/entities.pb.go
+  187711 ./ck-patch-data-protocol2/protobuf/entities.pb.go
+  573256 total

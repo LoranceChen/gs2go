@@ -7,7 +7,7 @@ option csharp_namespace = "Patchdata.Protobuf";
 option java_multiple_files = true;
 // 엑셀 파일로부터 변환할 엔티티는 모두 이 파일 안에 있어야 합니다.
 // 참조하는 Enum 및 다른 메세지들은 다른 파일에서 import해도 됩니다.
-option go_package = "example.com/project/patch_data";
+option go_package = "example.com/project/myprotobuf";
 
 import "enums.proto";
 import "primary-entities.proto";

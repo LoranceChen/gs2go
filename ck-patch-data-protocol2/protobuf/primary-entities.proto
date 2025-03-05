@@ -1,6 +1,11 @@
-syntax = "proto3";
+//syntax = "proto3";
+
+edition = "2023";
 
 package ck;
+
+import "google/protobuf/go_features.proto";
+option features.(pb.go).api_level = API_OPAQUE;
 
 option java_package = "com.devsisters.ck.patchdata.protobuf";
 option csharp_namespace = "Patchdata.Protobuf";
